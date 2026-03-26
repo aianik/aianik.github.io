@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Projects — Ariful Islam Anik</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<header class="site-header">
+  <nav class="nav-inner">
+    <span class="nav-brand">Ariful Islam Anik</span>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="projects.html" class="active">Projects</a></li>
+      <li><a href="publications.html">Publications</a></li>
+      <li><a href="service.html">Experience</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main class="page-wrap">
+
+  <div class="page-header">
+    <h1>Projects</h1>
+    <p>End-to-end UX research and design projects, from problem framing and prototype to evaluated design principles.</p>
+  </div>
+
+  <div class="projects-grid" id="projectsGrid">
+
+    <a class="proj-card" href="project-chi2021.html" data-tags="Prototype Design,Interview Study,Iterative Design,Thematic Analysis,Mixed Methods">
+      <div class="proj-strip c1">
+        <span class="proj-num">01</span>
+        <h2>Does Transparency About Training Data Change How Users Trust AI?</h2>
+        <p class="proj-tagline">Studying how transparency about an AI's training data affects how users perceive and trust the system.</p>
+      </div>
+      <div class="proj-body">
+        <div class="proj-tags">
+          <span class="tag" data-tag="Prototype Design">Prototype Design</span>
+          <span class="tag" data-tag="Interview Study">Interview Study</span>
+          <span class="tag" data-tag="Iterative Design">Iterative Design</span>
+          <span class="tag" data-tag="Thematic Analysis">Thematic Analysis</span>
+          <span class="tag" data-tag="Mixed Methods">Mixed Methods</span>
+        </div>
+        <span class="proj-cta">View project →</span>
+      </div>
+    </a>
+
+    <a class="proj-card" href="project-vlhcc2024.html" data-tags="Prototype Design,Controlled Experiment,Qualitative Coding,Mixed Methods">
+      <div class="proj-strip c2">
+        <span class="proj-num">02</span>
+        <h2>Does Explanation Presentation Format Affect How Users Assess and Understand AI?</h2>
+        <p class="proj-tagline">Comparing narrative vs. Q&amp;A formats to understand how presentation style affects users' assessment and understanding of AI systems.</p>
+      </div>
+      <div class="proj-body">
+        <div class="proj-tags">
+          <span class="tag" data-tag="Prototype Design">Prototype Design</span>
+          <span class="tag" data-tag="Controlled Experiment">Controlled Experiment</span>
+          <span class="tag" data-tag="Qualitative Coding">Qualitative Coding</span>
+          <span class="tag" data-tag="Mixed Methods">Mixed Methods</span>
+        </div>
+        <span class="proj-cta">View project →</span>
+      </div>
+    </a>
+
+    <a class="proj-card" href="project-iui2026.html" data-tags="Prototype Design,Factorial Design,Cognitive Load,Mixed Methods">
+      <div class="proj-strip c3">
+        <span class="proj-num">03</span>
+        <h2>How Much Detail Should a Training Data Explanation Include?</h2>
+        <p class="proj-tagline">Examining the tradeoff between explanation detail and usability in training dataset explanations.</p>
+      </div>
+      <div class="proj-body">
+        <div class="proj-tags">
+          <span class="tag" data-tag="Prototype Design">Prototype Design</span>
+          <span class="tag" data-tag="Factorial Design">Factorial Design</span>
+          <span class="tag" data-tag="Cognitive Load">Cognitive Load</span>
+          <span class="tag" data-tag="Mixed Methods">Mixed Methods</span>
+        </div>
+        <span class="proj-cta">View project →</span>
+      </div>
+    </a>
+
+    <a class="proj-card" href="project-ailiteracy.html" data-tags="Scale Development,Survey Research,Psychometric Validation,Statistical Analysis">
+      <div class="proj-strip c4">
+        <span class="proj-num">04</span>
+        <h2>How Do We Measure AI Literacy: Developing a Scale That Captures Both Knowledge and Confidence?</h2>
+        <p class="proj-tagline">Developing and validating a dual-format AI literacy scale and exploring the calibration between confidence and knowledge.</p>
+      </div>
+      <div class="proj-body">
+        <div class="proj-tags">
+          <span class="tag" data-tag="Scale Development">Scale Development</span>
+          <span class="tag" data-tag="Survey Research">Survey Research</span>
+          <span class="tag" data-tag="Psychometric Validation">Psychometric Validation</span>
+          <span class="tag" data-tag="Statistical Analysis">Statistical Analysis</span>
+        </div>
+        <span class="proj-cta">View project →</span>
+      </div>
+    </a>
+
+  </div>
+
+</main>
+
+<footer class="site-footer">
+  <p>&copy; 2026 Ariful Islam Anik</p>
+  <p style="font-size: 0.75rem; margin-top: 0.4rem; opacity: 0.6;">Built with the assistance of <a href="https://claude.ai/code" target="_blank" rel="noopener">Claude Code</a>.</p>
+</footer>
+
+<script>
+  const cards = document.querySelectorAll('.proj-card');
+  let activeTag = null;
+
+  document.querySelectorAll('.tag[data-tag]').forEach(tag => {
+    tag.addEventListener('click', e => {
+      e.preventDefault();
+      e.stopPropagation();
+
+      const clicked = tag.dataset.tag;
+
+      if (activeTag === clicked) {
+        // Deselect — show all
+        activeTag = null;
+      } else {
+        activeTag = clicked;
+      }
+
+      // Update card visibility
+      cards.forEach(card => {
+        const cardTags = card.dataset.tags.split(',').map(t => t.trim());
+        const match = !activeTag || cardTags.includes(activeTag);
+        card.classList.toggle('card-hidden', !match);
+      });
+
+      // Update tag highlight state across all cards
+      document.querySelectorAll('.tag[data-tag]').forEach(t => {
+        t.classList.toggle('tag-active', t.dataset.tag === activeTag);
+      });
+    });
+  });
+</script>
+
+</body>
+</html>
