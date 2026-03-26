@@ -99,7 +99,7 @@
   <!-- Methods -->
   <div class="detail-section">
     <h2>Methods</h2>
-    <p>The project used two sequential studies with different goals and methods. The first was a formative study aimed at understanding how users respond to training data information and what they find meaningful — analyzed through thematic analysis of semi-structured interviews. The second was an evaluative study that tested a refined prototype under controlled conditions, combining post-task questionnaires and post-study interviews to capture both quantitative and qualitative responses.</p>
+    <p>The project used two sequential studies with different goals and methods. The first was a formative study aimed at understanding how users respond to training data information and what they find meaningful, analyzed through thematic analysis of semi-structured interviews. The second was an evaluative study that tested a refined prototype under controlled conditions, combining post-task questionnaires and post-study interviews to capture both quantitative and qualitative responses.</p>
     <div class="method-grid" style="margin-top:1.2rem;">
       <div class="method-card">
         <span class="method-icon">💬</span>
@@ -163,157 +163,149 @@
       </div>
       <div class="process-narrative-block">
         <h4>Concept Development</h4>
-        <p>Before running any study, I developed the data-centric explanation framework — a structured set of information categories that could describe a training dataset to a non-technical user. This included attributes like data recency, geographic and demographic coverage, collection method, and known limitations. Early sketches explored how to present these categories in a way that was readable without being overwhelming.</p>
+        <p>The design process began with Gebru et al.'s datasheets, a documentation format built for ML practitioners. Through iterative piloting of different presentation styles and information subsets, I adapted this into a five-category, question-based format accessible to everyday users.</p>
       </div>
     </div>
 
     <div class="carousel" id="chi2021-carousel">
       <div class="carousel-track">
+        <button class="carousel-btn prev" aria-label="Previous">&#8592;</button>
+        <button class="carousel-btn next" aria-label="Next">&#8594;</button>
         <div class="carousel-slide active">
-          <img src="images/chi2021-information-category.png" alt="The five information categories in the data-centric explanation framework" />
-          <p class="carousel-caption">The five information categories that form the data-centric explanation framework.</p>
+          <img src="images/chi2021-sketch1.png" alt="Early sketch exploring information flow and structure" />
+          <p class="carousel-caption">Early sketch exploring how training data information might be structured and connected.</p>
         </div>
         <div class="carousel-slide">
-          <img src="images/chi2021-lowfi.png" alt="Low-fidelity prototype sketches" />
-          <p class="carousel-caption">Low-fidelity sketches exploring how to surface training data information to users.</p>
+          <img src="images/chi2021-sketch2.png" alt="Sketch of information categories including collection, demographics, issues, and usage" />
+          <p class="carousel-caption">Sketching out the information categories: collection, demographics, issues, and usage.</p>
         </div>
         <div class="carousel-slide">
-          <img src="images/chi2021-hifi-prototype.png" alt="Hi-fi prototype of the data-centric explanation interface" />
-          <p class="carousel-caption">Hi-fidelity prototype developed after Study 1 and used in the evaluative study.</p>
+          <img src="images/chi2021-sketch3.png" alt="Refined low-fidelity prototype sketch" />
+          <p class="carousel-caption">A more refined low-fidelity prototype before moving to digital prototyping.</p>
+        </div>
+        <div class="carousel-slide">
+          <img src="images/chi2021-sketch4.png" alt="Digital low-fidelity prototype" class="carousel-img-bordered" />
+          <p class="carousel-caption">A digital low-fidelity prototype exploring the question-based presentation of training data information.</p>
         </div>
       </div>
       <div class="carousel-controls">
-        <button class="carousel-btn prev" aria-label="Previous">&#8592;</button>
         <div class="carousel-dots">
           <button class="carousel-dot active" aria-label="Slide 1"></button>
           <button class="carousel-dot" aria-label="Slide 2"></button>
           <button class="carousel-dot" aria-label="Slide 3"></button>
+          <button class="carousel-dot" aria-label="Slide 4"></button>
         </div>
+      </div>
+    </div>
+
+    <!-- Study 1 -->
+    <div class="study-block">
+      <div class="study-block-header">
+        <div class="study-block-badge">Study 1</div>
+        <div class="study-block-title">Concept Exploration &amp; Prototype Refinement</div>
+      </div>
+      <div class="study-block-tags">
+        <span class="study-tag">Exploratory</span>
+        <span class="study-tag">n = 17</span>
+        <span class="study-tag">Semi-Structured Interviews</span>
+        <span class="study-tag">Thematic Analysis</span>
+      </div>
+      <p>The goal of Study 1 was to understand what participants generally know about machine learning systems and how they would respond to data-centric explanations. Participants were shown an early prototype and interviewed about their knowledge of ML, their ideas on algorithmic fairness, and their reactions to the explanation format.</p>
+      <div class="study-takeaway">
+        <div class="study-takeaway-label">Key Findings</div>
+        <ul class="iteration-list">
+          <li>All 17 participants reacted positively to data-centric explanations and were interested in knowing more about training data</li>
+          <li>Over half (9/17) were unaware of fairness issues in ML systems, suggesting a significant transparency gap</li>
+          <li>The Q&amp;A format was well received; participants felt it helped them focus on what they cared about most</li>
+          <li>ML experts raised concerns that some information might be hard for non-experts to interpret, or could prompt unnecessary complaints</li>
+          <li>A few participants (3/17) found some answers too shallow and wanted more technical depth</li>
+        </ul>
+      </div>
+      <div class="study-takeaway" style="margin-top:0.8rem;">
+        <div class="study-takeaway-label">What Changed in the Redesign</div>
+        <ul class="iteration-list">
+          <li>Added more depth and detail to nearly all answers in the prototype</li>
+          <li>Removed low-utility questions (dataset creators, funding source, maintenance) based on usefulness ratings</li>
+          <li>Refined language throughout to improve accessibility for non-expert users</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Prototype carousel -->
+  <div class="detail-section">
+    <h2>Final Prototype</h2>
+    <p>Following Study 1, the prototype was refined and built into a high-fidelity interface used in the evaluative study. It presented training data information across five categories using a question-based format, allowing users to explore at their own pace.</p>
+    <div class="carousel" id="chi2021-prototype-carousel">
+      <div class="carousel-track">
+        <button class="carousel-btn prev" aria-label="Previous">&#8592;</button>
         <button class="carousel-btn next" aria-label="Next">&#8594;</button>
-      </div>
-    </div>
-
-    <div class="visual-wrap">
-      <div class="study-flow">
-        <div class="study-box">
-          <h4>Study 1: Formative</h4>
-          <p>Think-aloud sessions to explore how users engage with training data information. Identified salient data attributes and comprehension patterns.</p>
-          <span class="n-badge">n = 17</span>
+        <div class="carousel-slide active">
+          <img src="images/chi2021-hifi-pic1.png" alt="Hi-fi prototype screen 1" />
+          <p class="carousel-caption">Overview: five training data categories users can explore — Collection, Demographics, Recommended Usage, Potential Issues, and General Information.</p>
         </div>
-        <div class="flow-arrow">→</div>
-        <div class="study-box">
-          <h4>Study 2: Evaluative</h4>
-          <p>Measured shifts in trust, fairness judgment, and reliance after exposure to refined data-centric explanations across realistic AI scenarios.</p>
-          <span class="n-badge">n = 27</span>
+        <div class="carousel-slide">
+          <img src="images/chi2021-hifi-pic2.png" alt="Hi-fi prototype screen 2" />
+          <p class="carousel-caption">Collection: Q&amp;A cards covering how much data was collected, where it came from, who collected it, and how labeling was done.</p>
         </div>
-      </div>
-      <p class="visual-caption">Two-study iterative design: Study 1 explored; Study 2 evaluated.</p>
-    </div>
-
-    <div class="visual-wrap">
-      <div style="text-align:center; font-family:var(--font-ui); font-size:0.72rem; font-weight:700; color:var(--muted); text-transform:uppercase; letter-spacing:0.1em; margin-bottom:1rem;">Repeat for four scenarios</div>
-      <div style="display:flex; align-items:center; gap:0; border:1px solid var(--border); border-radius:6px; overflow:hidden;">
-        <div style="flex:1; padding:0.9rem 0.7rem; text-align:center; background:var(--tag-bg); border-right:1px solid var(--border);">
-          <div style="font-family:var(--font-ui); font-size:0.78rem; font-weight:700; color:var(--navy); line-height:1.4;">Introduce experiment</div>
+        <div class="carousel-slide">
+          <img src="images/chi2021-hifi-pic3.png" alt="Hi-fi prototype screen 3" />
+          <p class="carousel-caption">Demographics: a gender distribution bar chart (80% male, 20% female) alongside questions about age, race, and geographic distribution.</p>
         </div>
-        <div style="padding:0 0.4rem; color:var(--accent); font-size:1rem;">→</div>
-        <div style="flex:1; padding:0.9rem 0.7rem; text-align:center; background:var(--tag-bg); border-right:1px solid var(--border);">
-          <div style="font-family:var(--font-ui); font-size:0.78rem; font-weight:700; color:var(--navy); line-height:1.4;">Introduce decision-making scenario</div>
+        <div class="carousel-slide">
+          <img src="images/chi2021-hifi-pic4.png" alt="Hi-fi prototype screen 4" />
+          <p class="carousel-caption">Recommended Usage: suggested use cases, contexts where the system should not be applied, and additional usage considerations.</p>
         </div>
-        <div style="padding:0 0.4rem; color:var(--accent); font-size:1rem;">→</div>
-        <div style="flex:1; padding:0.9rem 0.7rem; text-align:center; background:#dff0e8; border-right:1px solid var(--border);">
-          <div style="font-family:var(--font-ui); font-size:0.78rem; font-weight:700; color:#1a5c36; line-height:1.4;">Present data-centric explanation</div>
+        <div class="carousel-slide">
+          <img src="images/chi2021-hifi-pic5.png" alt="Hi-fi prototype screen 5" />
+          <p class="carousel-caption">Potential Issues: known errors in the dataset (3.75% error rate), ethical review status, and whether the data contains sensitive information.</p>
         </div>
-        <div style="padding:0 0.4rem; color:var(--accent); font-size:1rem;">→</div>
-        <div style="flex:1; padding:0.9rem 0.7rem; text-align:center; background:var(--tag-bg); border-right:1px solid var(--border);">
-          <div style="font-family:var(--font-ui); font-size:0.78rem; font-weight:700; color:var(--navy); line-height:1.4;">Post-scenario questionnaire</div>
-        </div>
-        <div style="padding:0 0.4rem; color:var(--accent); font-size:1rem;">→</div>
-        <div style="flex:1; padding:0.9rem 0.7rem; text-align:center; background:var(--tag-bg);">
-          <div style="font-family:var(--font-ui); font-size:0.78rem; font-weight:700; color:var(--navy); line-height:1.4;">Semi-structured interview</div>
+        <div class="carousel-slide">
+          <img src="images/chi2021-hifi-pic6.png" alt="Hi-fi prototype screen 6" />
+          <p class="carousel-caption">General Information: dataset release and collection dates, prior use cases, consent procedures, and public availability status.</p>
         </div>
       </div>
-      <p class="visual-caption">Figure 2. Study 2 procedure, repeated across all four AI scenarios.</p>
+      <div class="carousel-controls">
+        <div class="carousel-dots">
+          <button class="carousel-dot active" aria-label="Slide 1"></button>
+          <button class="carousel-dot" aria-label="Slide 2"></button>
+          <button class="carousel-dot" aria-label="Slide 3"></button>
+          <button class="carousel-dot" aria-label="Slide 4"></button>
+          <button class="carousel-dot" aria-label="Slide 5"></button>
+          <button class="carousel-dot" aria-label="Slide 6"></button>
+        </div>
+      </div>
     </div>
-
   </div>
 
-  <!-- Design Iteration -->
+  <!-- Study 2 -->
   <div class="detail-section">
-    <h2>From Study 1 to Study 2</h2>
-    <p class="section-lead">Study 1 was exploratory. Study 2 was evaluative. Between them, the design changed substantially based on what participants showed me.</p>
-    <div class="iteration-grid">
-      <div class="iteration-box">
-        <div class="iteration-label">What Study 1 revealed</div>
+    <h2>Study 2</h2>
+    <div class="study-block">
+      <div class="study-block-header">
+        <div class="study-block-badge">Study 2</div>
+        <div class="study-block-title">Utility Across Scenarios &amp; Expertise Levels</div>
+      </div>
+      <div class="study-block-tags">
+        <span class="study-tag">Evaluative</span>
+        <span class="study-tag">n = 27</span>
+        <span class="study-tag">Post-Task Questionnaires</span>
+        <span class="study-tag">Semi-Structured Interviews</span>
+        <span class="study-tag">Mixed Methods</span>
+      </div>
+      <p>The second study investigated how data-centric explanations impact trust and fairness judgments across a range of AI scenarios and training data characteristics. Participants (9 ML experts, 8 intermediates, 10 beginners) interacted with four real-world scenarios: predictive bail decisions, facial expression recognition, automated admission decisions, and automated speech recognition. Two scenarios showed balanced training data; two revealed clear red flags such as demographic imbalances and high error rates. After reviewing each explanation, participants completed validated Likert-scale questionnaires on trust, fairness, and comfort, followed by a 40-60 minute semi-structured interview.</p>
+      <div class="study-takeaway">
+        <div class="study-takeaway-label">Key Findings</div>
         <ul class="iteration-list">
-          <li>Users wanted control over how deeply they explored each category — fixed sequential presentation felt constraining</li>
-          <li>Collection method and data recency were the most salient attributes; demographic coverage came third</li>
-          <li>Several information categories were confusing or redundant — participants struggled to distinguish between them</li>
-          <li>The reading level of some explanations was too technical for non-expert users</li>
+          <li>Trust, fairness, and comfort were all significantly lower when explanations revealed red-flag training data (p &lt; .001 for trust and fairness)</li>
+          <li>Perceived utility of the explanations remained consistently high regardless of data quality: participants rated the explanations highly for helping them understand and reflect on the training process</li>
+          <li>Expertise did not significantly affect any questionnaire measure; beginners and experts responded similarly to the explanations</li>
+          <li>Demographics was the most influential category: two-thirds of participants cited it as the most useful, and participants across expertise levels were able to identify potential biases from the visualizations</li>
+          <li>High-stakes scenarios (bail decisions, admissions) prompted deeper engagement; most participants (22/27) felt explanations were less necessary for low-stakes systems</li>
+          <li>Explanations helped most participants (21/27) assess fairness to at least some extent, though some experts wanted additional information on decision factors</li>
         </ul>
       </div>
-      <div class="iteration-box">
-        <div class="iteration-label">What changed in the redesign</div>
-        <ul class="iteration-list">
-          <li>Replaced fixed-sequence presentation with a Q&amp;A interface, giving users agency over exploration depth</li>
-          <li>Consolidated and clarified the five information categories based on user confusion patterns</li>
-          <li>Added example questions within each category to prompt engagement and scaffold exploration</li>
-          <li>Simplified language throughout; removed jargon identified in think-aloud sessions</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-
-  <!-- Pull quote -->
-  <div class="pull-quote">
-    <blockquote>I had no idea the model had never seen data from people like me. That changes everything about whether I'd trust it.</blockquote>
-    <cite>Representative participant response, Study 2</cite>
-  </div>
-
-  <!-- Quantitative Results -->
-  <div class="detail-section">
-    <h2>Quantitative Results</h2>
-    <p style="font-size:0.9rem; color:var(--muted); margin-bottom:1.2rem;">Study 2 (n=27) questionnaire data revealed significant differences between balanced and red-flag training data conditions across all perception measures.</p>
-    <div class="visual-wrap">
-      <div class="bar-section-label">Balanced Training Data</div>
-      <div class="bar-chart">
-        <div class="bar-row">
-          <span class="bar-label">Trust in the system</span>
-          <div class="bar-track"><div class="bar-fill good" style="width:74%"><span class="bar-val">31.0 / 42</span></div></div>
-        </div>
-        <div class="bar-row">
-          <span class="bar-label">Fairness in the system</span>
-          <div class="bar-track"><div class="bar-fill good" style="width:80%"><span class="bar-val">22.5 / 28</span></div></div>
-        </div>
-        <div class="bar-row">
-          <span class="bar-label">Perception of fair training</span>
-          <div class="bar-track"><div class="bar-fill good" style="width:71%"><span class="bar-val">5.0 / 7</span></div></div>
-        </div>
-        <div class="bar-row">
-          <span class="bar-label">Comfort in the system</span>
-          <div class="bar-track"><div class="bar-fill good" style="width:71%"><span class="bar-val">5.0 / 7</span></div></div>
-        </div>
-      </div>
-      <div class="bar-section-label" style="margin-top:1.2rem;">Training Data with Red Flags</div>
-      <div class="bar-chart">
-        <div class="bar-row">
-          <span class="bar-label">Trust in the system</span>
-          <div class="bar-track"><div class="bar-fill alt" style="width:63%"><span class="bar-val">26.5 / 42 &darr; p&lt;.001</span></div></div>
-        </div>
-        <div class="bar-row">
-          <span class="bar-label">Fairness in the system</span>
-          <div class="bar-track"><div class="bar-fill alt" style="width:63%"><span class="bar-val">17.5 / 28 &darr; p&lt;.001</span></div></div>
-        </div>
-        <div class="bar-row">
-          <span class="bar-label">Perception of fair training</span>
-          <div class="bar-track"><div class="bar-fill alt" style="width:64%"><span class="bar-val">4.5 / 7 &darr; p=.008</span></div></div>
-        </div>
-        <div class="bar-row">
-          <span class="bar-label">Comfort in the system</span>
-          <div class="bar-track"><div class="bar-fill alt" style="width:57%"><span class="bar-val">4.0 / 7 &darr; p=.011</span></div></div>
-        </div>
-      </div>
-      <p class="visual-caption">Median scores on all perception measures were significantly lower when explanations revealed red-flag training data, confirming that training data transparency produces directional, content-sensitive trust responses.</p>
     </div>
   </div>
 
@@ -323,27 +315,26 @@
     <div class="insight-grid">
       <div class="insight-card">
         <span class="insight-num">01</span>
-        <h4>Trust is directional, not uniform</h4>
-        <p>Explanations revealing well-curated, representative training data increased confidence. Those surfacing gaps or imbalances reduced it. Users proved to be motivated, capable auditors when given the right information.</p>
+        <h4>Training data transparency produces calibrated, not inflated, trust</h4>
+        <p>Trust moved in the direction the data warranted: up when explanations showed balanced, well-documented training data, and down when they surfaced red flags like demographic imbalances or high error rates. Participants were motivated, capable auditors when given the right information.</p>
       </div>
       <div class="insight-card">
         <span class="insight-num">02</span>
-        <h4>Data provenance unlocks fairness reasoning</h4>
-        <p>Without training data context, most users accepted AI outputs at face value. With it, they actively questioned demographic representation, identified potential biases, and sought justification for model decisions.</p>
+        <h4>Data-centric explanations support fairness reasoning, but not fully</h4>
+        <p>Demographics was the most influential category: two-thirds of participants cited it as the most useful, and people across all expertise levels identified potential biases from the visualizations. Most participants (21/27) felt the explanations helped them assess fairness, though some experts also wanted information on the decision process.</p>
       </div>
       <div class="insight-card">
         <span class="insight-num">03</span>
-        <h4>Three data attributes drove most reactions</h4>
-        <p>Data recency, geographic and demographic coverage, and collection method were the attributes users consistently anchored their trust assessments on, more than statistical properties or sample size.</p>
+        <h4>Non-experts were more capable than ML practitioners expected</h4>
+        <p>Some ML-experienced participants worried the explanations would be too complex for non-experts. But beginners engaged with the information just as effectively as intermediates and experts, and no non-expert reported difficulty understanding the content.</p>
       </div>
       <div class="insight-card">
         <span class="insight-num">04</span>
-        <h4>Context shapes interpretation</h4>
-        <p>Data-centric explanations had the greatest impact in high-stakes domains like hiring and criminal justice, where users already held strong prior beliefs about fairness and were primed to scrutinize AI behavior.</p>
+        <h4>High stakes amplify the value of transparency</h4>
+        <p>Participants engaged most carefully with explanations in scenarios involving bail decisions and admissions, where the consequences of biased systems are most severe. Most felt explanations were less necessary for low-stakes systems like social media recommendations.</p>
       </div>
     </div>
   </div>
-
 
   <!-- Implications -->
   <div class="detail-section">
@@ -352,15 +343,18 @@
       <h4>Core Insight</h4>
       <p>Transparency is not just about explaining decisions. It is about giving people the context they need to decide how much to trust those decisions in the first place.</p>
     </div>
-    <div class="outcome-note">
-      <span class="outcome-label">Impact</span>
-      This work established training data transparency as a recognized direction in XAI research and directly motivated the three follow-on studies in this portfolio. It was published at <strong>ACM CHI 2021</strong>.
-    </div>
     <ol class="impl-list">
-      <li><strong>Make training data a first-class transparency artifact.</strong> XAI systems should surface human-readable descriptions of training data alongside output explanations, not as a technical supplement, but as a primary communication channel for building calibrated trust.</li>
-      <li><strong>Lead with what users actually care about.</strong> Provenance attributes like recency, demographic coverage, and collection method are far more influential than abstract statistical properties. Explanation design should prioritize these dimensions.</li>
-      <li><strong>Design for calibrated trust, not maximum trust.</strong> An explanation that lowers trust by revealing a model's real limitations is not a failed transparency design: it is the goal. Honest transparency should be the standard, not polished reassurance.</li>
+      <li><strong>Make training data a first-class transparency artifact.</strong> Data-centric explanations should sit alongside outcome-level explanations, not replace them. Users can reason about data quality and demographics on their own terms; they do not need to understand a model's internals to form a meaningful judgment.</li>
+      <li><strong>Prioritize demographics and collection in the explanation design.</strong> These two categories drove the most trust and fairness reasoning. Explanation designers should lead with what matters most to users, not what is easiest to extract from a model.</li>
+      <li><strong>Design for calibrated trust, not maximum trust.</strong> An explanation that lowers trust by revealing problems is not a failed design; it is working as intended. The goal is informed judgment, not reassurance.</li>
+      <li><strong>Do not underestimate non-expert users.</strong> The assumption that training data information will overwhelm general audiences was not supported. Explanation designers should test accessibility with real users rather than relying on expert intuitions about what non-experts can handle.</li>
     </ol>
+  </div>
+
+  <!-- Impact -->
+  <div class="detail-section">
+    <h2>Impact</h2>
+    <p>This work established training data transparency as a recognized direction in XAI research and directly motivated the three follow-on studies in this portfolio. It was published at <strong>ACM CHI 2021</strong>.</p>
   </div>
 
   <!-- Project navigation -->
