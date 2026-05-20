@@ -3,14 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Does Explanation Presentation Format Affect How Users Assess and Understand AI? | Ariful Islam Anik</title>
+  <title>Does Explanation Presentation Format Affect How Users Assess and Understand AI? | Ariful Islam Anik, PhD</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
 <header class="site-header">
   <nav class="nav-inner">
-    <span class="nav-brand">Ariful Islam Anik</span>
+    <span class="nav-brand">Ariful Islam Anik, PhD</span>
     <ul class="nav-links">
       <li><a href="index.html">Home</a></li>
       <li><a href="projects.html" class="active">Projects</a></li>
@@ -26,7 +26,7 @@
   <!-- Hero -->
   <div class="proj-hero c2">
     <h1>Does Explanation Presentation Format Affect How Users Assess and Understand AI?</h1>
-    <p class="proj-tagline">Comparing narrative vs. Q&amp;A formats to understand how presentation style affects users' assessment and understanding of AI systems.</p>
+    <p class="proj-tagline">A between-subjects study comparing a narrative Data Story and a Q&amp;A interface, asking whether format shapes the quality and accuracy of user critiques of an AI system.</p>
     <div class="hero-stats">
       <div class="hero-stat">
         <div class="hero-stat-val">39</div>
@@ -35,6 +35,10 @@
       <div class="hero-stat">
         <div class="hero-stat-val">2</div>
         <div class="hero-stat-label">Conditions</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-val">352</div>
+        <div class="hero-stat-label">SWOT Comments</div>
       </div>
       <div class="hero-stat">
         <div class="hero-stat-val">VL/HCC &rsquo;24</div>
@@ -48,37 +52,22 @@
   <!-- Overview -->
   <div class="detail-section">
     <h2>Overview</h2>
-    <p class="section-lead">
-      Prior work showed that training data explanations can shift user trust. But what happens
-      when the same information is packaged differently? Does format matter? And if so, how?
-    </p>
-    <p>
-      This study examined whether the <em>presentation style</em> of training dataset explanations
-      shapes the quality of user critiques about AI systems, including how accurately they reason
-      about bias, how deeply they engage with the information, and how they feel about the experience.
-      By holding information content constant and varying only format, I isolated the design variable
-      that practitioners most directly control.
-    </p>
+    <p class="section-lead">Prior work showed users value training data transparency. But how do they actually use that information? And does the format it comes in change what they do with it? I designed two contrastive explanation formats and ran a study to find out.</p>
   </div>
 
   <!-- My Role -->
   <div class="my-role-block">
     <div class="my-role-label">My Role</div>
-    <p>The central design challenge here was creating two genuinely equivalent explanation formats — same content, different interaction model — without one feeling more complete than the other. I designed both conditions, built the study materials, recruited and ran all 39 participants, independently coded critique transcripts alongside a second coder for reliability, and ran the statistical analysis.</p>
+    <p>I designed both explanation conditions from scratch: a scrollable narrative Data Story with annotated visuals and infographics, and a Q&amp;A interface replicating the format from CHI 2021. I built both interfaces, recruited and ran all 39 participants (in-person and remotely), did the initial iterative coding of all SWOT analysis comments, ran the statistical analysis including ANCOVA and chi-squared tests, and conducted and coded the semi-structured interviews.</p>
   </div>
 
   <!-- Problem -->
   <div class="detail-section">
     <h2>The Problem</h2>
-    <p>
-      Most XAI research focuses on <em>what</em> to explain. Far less attention has been paid to
-      <em>how</em> that explanation is delivered. Yet interface designers make format decisions
-      constantly, and those decisions may have real consequences for whether users can actually
-      do something useful with the information they receive.
-    </p>
+    <p>We know users value training data explanations. What we do not know is how they use and comprehend the information, and whether the format it comes in changes what they actually do with it. Interface designers make format decisions constantly; this study asks whether those decisions have measurable consequences for critique quality.</p>
     <div class="highlight-box">
       <h4>Design Question</h4>
-      <p>If two users receive exactly the same training data information: one as a narrative and one as an interactive Q&amp;A. Do they end up equally equipped to critique the AI system? This study says no.</p>
+      <p>If two users receive exactly the same training data information: one as a narrative and one as a structured Q&amp;A, do they end up equally equipped to critique the AI system? This study says no.</p>
     </div>
   </div>
 
@@ -87,15 +76,42 @@
     <h2>Research Questions</h2>
     <div class="rq-block">
       <div class="rq-label">RQ 1</div>
-      <p>How do Data Story and Q&amp;A formats differ in the types and quality of critique users produce about an AI system?</p>
+      <p>What types of training dataset information do users draw on when critiquing an automated system, and does presentation style affect which information they use?</p>
     </div>
     <div class="rq-block">
       <div class="rq-label">RQ 2</div>
-      <p>Does presentation format affect users' ability to identify specific biases present in the training data?</p>
+      <p>Does presentation style affect the accuracy of user critiques and their ability to identify data biases?</p>
     </div>
     <div class="rq-block">
       <div class="rq-label">RQ 3</div>
-      <p>How do users' subjective impressions of the explanation differ between formats?</p>
+      <p>How do subjective impressions of the explanation differ between formats?</p>
+    </div>
+  </div>
+
+  <!-- Methods -->
+  <div class="detail-section">
+    <h2>Methods</h2>
+    <div class="method-grid">
+      <div class="method-card">
+        <span class="method-icon">🧪</span>
+        <h4>Between-Subjects Experiment</h4>
+        <p>39 participants randomly assigned to Data Story (n=19) or Q&amp;A (n=20). Same training data content, different format.</p>
+      </div>
+      <div class="method-card">
+        <span class="method-icon">📋</span>
+        <h4>SWOT Analysis</h4>
+        <p>Participants produced structured critiques identifying Strengths, Weaknesses, Opportunities, and Threats in the AI hiring system based on its training data explanation.</p>
+      </div>
+      <div class="method-card">
+        <span class="method-icon">🔍</span>
+        <h4>Content Coding</h4>
+        <p>Two researchers coded all 352 SWOT comments for topic coverage, bias type, and accuracy level. ANCOVA with AI literacy as covariate.</p>
+      </div>
+      <div class="method-card">
+        <span class="method-icon">💬</span>
+        <h4>Semi-Structured Interviews</h4>
+        <p>Post-study interviews probed attitudes toward AI, perceptions of the explanation, and reasons behind critique choices. Analyzed via thematic analysis.</p>
+      </div>
     </div>
   </div>
 
@@ -104,13 +120,13 @@
     <h2>Research Process</h2>
     <div class="visual-wrap">
       <div class="process-steps">
-        <div class="process-step">
+        <div class="process-step active">
           <div class="step-circle">1</div>
-          <div class="step-label">Literature Review</div>
+          <div class="step-label">Gap Identification</div>
         </div>
         <div class="process-step active">
           <div class="step-circle">2</div>
-          <div class="step-label">Condition Design</div>
+          <div class="step-label">Data Story Design</div>
         </div>
         <div class="process-step active">
           <div class="step-circle">3</div>
@@ -122,113 +138,94 @@
         </div>
         <div class="process-step active">
           <div class="step-circle">5</div>
-          <div class="step-label">Content Coding</div>
+          <div class="step-label">SWOT Coding</div>
         </div>
-        <div class="process-step">
+        <div class="process-step active">
           <div class="step-circle">6</div>
-          <div class="step-label">Analysis</div>
+          <div class="step-label">Analysis &amp; Synthesis</div>
         </div>
       </div>
     </div>
-  </div>
 
-  <!-- Design Decisions -->
-  <div class="detail-section">
-    <h2>Designing the Conditions</h2>
-    <p class="section-lead">The study only works if both formats are genuinely equivalent in content. Getting that right was the hardest design problem in the project.</p>
-    <div class="iteration-grid">
-      <div class="iteration-box">
-        <div class="iteration-label">Why narrative vs. Q&amp;A</div>
-        <ul class="iteration-list">
-          <li>These two formats represent fundamentally different models of how information reaches a user: pushed linearly vs. pulled on demand</li>
-          <li>Narrative mirrors how journalists convey complex information — contextual, sequential, inferential</li>
-          <li>Q&amp;A mirrors how people increasingly query AI systems — targeted, user-driven, non-linear</li>
-          <li>Comparing them isolates the interaction model as the independent variable while holding content constant</li>
-        </ul>
+    <div class="process-narrative">
+      <div class="process-narrative-block">
+        <h4>The Gap</h4>
+        <p>CHI 2021 showed users value training data transparency. But that work did not study how users actually use or comprehend the information. The format question was entirely open.</p>
       </div>
-      <div class="iteration-box">
-        <div class="iteration-label">Key design constraints</div>
-        <ul class="iteration-list">
-          <li>Both formats had to contain identical information — no content advantages for either condition</li>
-          <li>Reading level and approximate word count were matched across conditions</li>
-          <li>The Q&amp;A interface had to feel complete, not like an incomplete narrative</li>
-          <li>Multiple pilot rounds were used to verify that neither format felt more thorough than the other before the main study</li>
-        </ul>
+      <div class="process-narrative-block">
+        <h4>Designing the Data Story</h4>
+        <p>I drew on data storytelling literature to build a scrollable, author-driven narrative interspersed with annotated visualizations and infographics. The Q&amp;A interface replicated the structured format from prior work. Both presented identical content about the same fictitious hiring dataset.</p>
       </div>
     </div>
+
+    <!-- Study block -->
+    <div class="study-block">
+      <div class="study-block-header">
+        <div class="study-block-badge">Study</div>
+        <div class="study-block-title">Comparing Critique Quality Across Presentation Styles</div>
+      </div>
+      <div class="study-block-tags">
+        <span class="study-tag">Between-Subjects</span>
+        <span class="study-tag">n = 39</span>
+        <span class="study-tag">SWOT Analysis</span>
+        <span class="study-tag">Content Coding</span>
+        <span class="study-tag">Semi-Structured Interviews</span>
+      </div>
+      <p>Participants were placed in the role of an HR employee tasked with recommending whether to purchase an automated hiring system, based solely on its training data explanation. They used their assigned format to complete a SWOT analysis, then answered Likert-scale questionnaires on trust, fairness, and understanding, and finished with a semi-structured interview. Sessions averaged 90 minutes.</p>
+      <div class="study-takeaway">
+        <div class="study-takeaway-label">Key Findings</div>
+        <div class="finding-chips">
+          <div class="finding-chip">
+            <p><strong>Format shaped critique accuracy.</strong> Data Story participants produced significantly more accurate critiques: 66% rated as high understanding vs. 42% in the Q&amp;A.</p>
+          </div>
+          <div class="finding-chip">
+            <p><strong>Format directed attention differently.</strong> Data Story participants focused more on demographics and instance-level data. Q&amp;A participants focused more on dataset overview information.</p>
+          </div>
+          <div class="finding-chip">
+            <p><strong>Both formats surfaced bias.</strong> Most participants identified at least one data bias. Data Story led to more Representation and Measurement biases; Q&amp;A led to more Temporal biases.</p>
+          </div>
+          <div class="finding-chip">
+            <p><strong>Q&amp;A felt more educational.</strong> A trend suggested participants felt they learned more about ML/AI from the Q&amp;A, despite producing less accurate critiques.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
   </div>
 
-  <!-- Study Design -->
-  <div class="detail-section">
-    <h2>Study Design</h2>
-    <p>
-      A between-subjects experiment assigned participants to one of two conditions.
-      Both conditions presented identical information about the same AI hiring tool's training dataset.
-      Only the format differed.
-    </p>
-
+  <!-- Condition comparison -->
+  <div class="detail-section featured">
+    <h2>The Two Conditions</h2>
+    <p>The study only works if both formats contain identical information. The design challenge was ensuring neither felt more thorough than the other while making them genuinely distinct in interaction model.</p>
     <div class="visual-wrap">
       <div class="condition-compare">
         <div class="cond-box">
           <div class="cond-header">Condition A: Data Story</div>
           <div class="cond-body">
-            <div class="cond-row"><span class="cond-dot"></span><span>Training data information delivered as a cohesive written narrative</span></div>
-            <div class="cond-row"><span class="cond-dot"></span><span>Linear reading experience; information flows in fixed sequence</span></div>
-            <div class="cond-row"><span class="cond-dot"></span><span>Contextual framing woven throughout the description</span></div>
-            <div class="cond-row"><span class="cond-dot"></span><span>Encourages holistic, system-level reading</span></div>
+            <div class="cond-row"><span class="cond-dot"></span><span>Author-driven scrollable narrative with annotated visuals</span></div>
+            <div class="cond-row"><span class="cond-dot"></span><span>Infographic slideshows accompany key data processing steps</span></div>
+            <div class="cond-row"><span class="cond-dot"></span><span>Limited interactivity: hover tooltips reveal additional attributes</span></div>
+            <div class="cond-row"><span class="cond-dot"></span><span>Guides readers through the data story sequentially</span></div>
           </div>
         </div>
         <div class="cond-box active">
           <div class="cond-header">Condition B: Q&amp;A Interface</div>
           <div class="cond-body">
-            <div class="cond-row"><span class="cond-dot"></span><span>Participants query specific aspects of training data on demand</span></div>
-            <div class="cond-row"><span class="cond-dot"></span><span>Non-linear, user-driven navigation through information</span></div>
-            <div class="cond-row"><span class="cond-dot"></span><span>Information only revealed when explicitly requested</span></div>
+            <div class="cond-row"><span class="cond-dot"></span><span>Same content organized as answers to specific questions</span></div>
+            <div class="cond-row"><span class="cond-dot"></span><span>User-driven: information revealed on demand per question</span></div>
+            <div class="cond-row"><span class="cond-dot"></span><span>Structured into four categories: Collection, Demographics, Usage, General</span></div>
             <div class="cond-row"><span class="cond-dot"></span><span>Encourages targeted, question-driven engagement</span></div>
           </div>
         </div>
       </div>
-      <p class="visual-caption">Same training data content. Different interaction model. Different outcomes.</p>
-    </div>
-
-    <p>
-      After reviewing their assigned explanation, participants wrote open-ended critiques of the AI system.
-      Critiques were independently coded for accuracy, breadth of issues identified, and depth of reasoning.
-      Post-task questionnaires captured perceptions of the explanation and the AI system.
-    </p>
-  </div>
-
-  <!-- Methods -->
-  <div class="detail-section">
-    <h2>Methods</h2>
-    <div class="method-grid">
-      <div class="method-card">
-        <span class="method-icon">🧪</span>
-        <h4>Between-Subjects Experiment</h4>
-        <p>Participants randomly assigned to one condition, eliminating carry-over effects between format exposures.</p>
-      </div>
-      <div class="method-card">
-        <span class="method-icon">📝</span>
-        <h4>Open-Ended Critique Task</h4>
-        <p>Participants wrote free-form critiques of the AI system after reviewing their explanation. Critiques were the primary outcome measure.</p>
-      </div>
-      <div class="method-card">
-        <span class="method-icon">🔍</span>
-        <h4>Content Coding</h4>
-        <p>Two independent coders analyzed critique transcripts for accuracy, issue breadth, bias identification, and reasoning depth.</p>
-      </div>
-      <div class="method-card">
-        <span class="method-icon">📊</span>
-        <h4>Post-Task Questionnaires</h4>
-        <p>Measured perceived control, explanation satisfaction, and subjective impressions of the AI system across conditions.</p>
-      </div>
+      <p class="visual-caption">Same training data content. Different interaction model. Different critique outcomes.</p>
     </div>
   </div>
 
   <!-- Pull quote -->
   <div class="pull-quote">
-    <blockquote>Reading it as a story made me think about the whole picture, not just the one thing I was worried about. I kept connecting things.</blockquote>
-    <cite>Participant in the Data Story condition</cite>
+    <blockquote>I would've gone with the system without any thinking if I didn't see the explanation. I would've bought the system. If I don't have any information on what it's doing, I wouldn't care, because it's making my life easier.</blockquote>
+    <cite>Participant in the Q&amp;A condition</cite>
   </div>
 
   <!-- Key Insights -->
@@ -238,22 +235,22 @@
       <div class="insight-card">
         <span class="insight-num">01</span>
         <h4>Format is not neutral</h4>
-        <p>Presentation style systematically shaped the structure and content of user critiques , even when the underlying information was held constant. How you say it changes what people do with it.</p>
+        <p>Presentation style systematically shaped which information users drew on, what biases they identified, and how accurate their critiques were, even when the underlying content was identical.</p>
       </div>
       <div class="insight-card">
         <span class="insight-num">02</span>
-        <h4>Narrative drives holistic reasoning</h4>
-        <p>Data Story participants produced critiques that connected multiple issues and reasoned about the AI system as a whole. The narrative framing encouraged inferential thinking beyond what was explicitly stated.</p>
+        <h4>Narrative drives accuracy; Q&amp;A drives perceived learning</h4>
+        <p>Data Story participants produced more accurate critiques. Q&amp;A participants felt they learned more about AI/ML. Accuracy and sense of learning pointed in opposite directions.</p>
       </div>
       <div class="insight-card">
         <span class="insight-num">03</span>
-        <h4>Q&amp;A sharpens precision, narrows scope</h4>
-        <p>Q&amp;A participants produced more targeted, fact-specific critiques and reported higher perceived control. But the on-demand format meant users only investigated what they already suspected, missing issues they did not know to ask about.</p>
+        <h4>Visuals direct attention more than structure does</h4>
+        <p>The Data Story's annotated graphics led participants to focus on demographics and instance-level information. The Q&amp;A's structure directed attention toward dataset overview. Format determines what users notice.</p>
       </div>
       <div class="insight-card">
         <span class="insight-num">04</span>
         <h4>Neither format is universally better</h4>
-        <p>The formats involve genuine tradeoffs between breadth of reasoning and user-driven focus. The right format depends on the goal: broad accountability auditing favors narrative; targeted investigation favors Q&amp;A.</p>
+        <p>Each format has genuine advantages. Data Story is preferable when accurate critique is the goal. Q&amp;A is preferable when the goal is helping users feel they are learning about the system.</p>
       </div>
     </div>
   </div>
@@ -261,15 +258,22 @@
   <!-- Implications -->
   <div class="detail-section">
     <h2>Design Implications</h2>
-    <div class="outcome-note">
-      <span class="outcome-label">Impact</span>
-      The finding that format shapes reasoning quality — independent of information content — directly motivated the IUI 2026 study, which investigated the mechanism behind this effect. Together the two studies form a coherent design research arc from format to depth.
+    <div class="highlight-box">
+      <h4>Core Insight</h4>
+      <p>Format is a design decision with measurable consequences. Holding content constant and varying only presentation style produced significantly different critique outcomes. Explanation designers cannot treat format as neutral.</p>
     </div>
     <ol class="impl-list">
-      <li><strong>Match format to the evaluation goal.</strong> Narrative formats support broad, exploratory accountability reasoning. Q&amp;A interfaces are better suited when users have specific, targeted concerns to investigate. Designers should treat these as distinct use cases, not interchangeable options.</li>
-      <li><strong>Narrative framing enables inference.</strong> A linear story supports users in drawing connections and reaching conclusions that transcend what was explicitly stated, a valuable property for bias detection that isolated Q&amp;A interactions do not replicate.</li>
-      <li><strong>Consider hybrid designs.</strong> The observed tradeoffs suggest an ideal explanation interface might combine narrative entry with on-demand depth, providing a coherent foundation while preserving user agency over how far to explore.</li>
+      <li><strong>Match format to the evaluation goal.</strong> If the goal is accurate critique of an AI system, a narrative format with integrated visuals is preferable. If the goal is giving users a sense of learning about ML, structured Q&amp;A has advantages.</li>
+      <li><strong>Use visuals and repetition to direct attention.</strong> The Data Story's annotated graphics and infographic slideshows drew participants to demographic imbalances and processing decisions. Format choices determine what users notice.</li>
+      <li><strong>Prefer accuracy over the feeling of learning.</strong> The Q&amp;A format created a stronger sense of learning while producing less accurate critiques. Subjective impressions of comprehension do not reliably track actual comprehension.</li>
+      <li><strong>Consider hybrid designs.</strong> The tradeoffs observed suggest an ideal format might combine narrative structure with on-demand depth, offering coherent framing while preserving user agency.</li>
     </ol>
+  </div>
+
+  <!-- Impact -->
+  <div class="detail-section">
+    <h2>Impact</h2>
+    <p>This study introduced critiquing as a new goal for training data explanations and demonstrated that format has measurable consequences for critique quality independent of content. The finding that presentation style impacts accuracy and perceived learning directly motivated the IUI 2026 study on information depth and disclosure. Published at <strong>IEEE VL/HCC 2024</strong>.</p>
   </div>
 
   <!-- Project navigation -->
@@ -307,7 +311,7 @@
 </script>
 
 <footer class="site-footer">
-  <p>&copy; 2026 Ariful Islam Anik</p>
+  <p>&copy; 2026 Ariful Islam Anik, PhD</p>
   <p style="font-size: 0.75rem; margin-top: 0.4rem; opacity: 0.6;">Built with the assistance of <a href="https://claude.ai/code" target="_blank" rel="noopener">Claude Code</a>.</p>
 </footer>
 

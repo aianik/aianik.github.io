@@ -3,14 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>How Much Detail Should a Training Data Explanation Include? | Ariful Islam Anik</title>
+  <title>How Much Detail Should a Training Data Explanation Include? | Ariful Islam Anik, PhD</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
 <header class="site-header">
   <nav class="nav-inner">
-    <span class="nav-brand">Ariful Islam Anik</span>
+    <span class="nav-brand">Ariful Islam Anik, PhD</span>
     <ul class="nav-links">
       <li><a href="index.html">Home</a></li>
       <li><a href="projects.html" class="active">Projects</a></li>
@@ -26,19 +26,19 @@
   <!-- Hero -->
   <div class="proj-hero c3">
     <h1>How Much Detail Should a Training Data Explanation Include?</h1>
-    <p class="proj-tagline">A factorial study that cracks open the depth-versus-accessibility tradeoff, finding the design pattern that resolves it.</p>
+    <p class="proj-tagline">A mixed factorial study on information depth and progressive disclosure in training dataset explanations, asking whether more detail helps or overwhelms users trying to critique an AI system.</p>
     <div class="hero-stats">
       <div class="hero-stat">
         <div class="hero-stat-val">32</div>
         <div class="hero-stat-label">Participants</div>
       </div>
       <div class="hero-stat">
-        <div class="hero-stat-val">4</div>
-        <div class="hero-stat-label">Conditions</div>
+        <div class="hero-stat-val">544</div>
+        <div class="hero-stat-label">Critique Comments</div>
       </div>
       <div class="hero-stat">
-        <div class="hero-stat-val">2&times;2</div>
-        <div class="hero-stat-label">Factorial Design</div>
+        <div class="hero-stat-val">Mixed 2&times;2</div>
+        <div class="hero-stat-label">Study Design</div>
       </div>
       <div class="hero-stat">
         <div class="hero-stat-val">IUI &rsquo;26</div>
@@ -57,18 +57,19 @@
       and you risk overwhelming them. Keep it simple, and you leave them without the tools to scrutinize what matters.
     </p>
     <p>
-      This project tackles that tension directly. Using a 2&times;2 factorial design, I examined how
-      <strong>information depth</strong> (summary vs. detailed) and <strong>disclosure style</strong>
-      (static vs. progressive) interact to shape user perceptions, cognitive load, and the quality
-      of critiques users produce about AI systems. The findings reveal a clear, actionable design
-      pattern, explaining why one specific combination outperforms the others.
+      This project tackles that tension directly. Using a mixed 2&times;2 factorial design, I examined how
+      <strong>information depth</strong> (summary vs. detailed) and <strong>progressive disclosure</strong>
+      (present vs. absent) interact to shape user perceptions, cognitive load, and the quality
+      of critiques users produce about AI systems. The findings complicate the standard advice to simplify:
+      participants consistently preferred detailed explanations and produced more accurate critiques with them,
+      even though they required more cognitive effort.
     </p>
   </div>
 
   <!-- My Role -->
   <div class="my-role-block">
     <div class="my-role-label">My Role</div>
-    <p>I designed and prototyped all four explanation conditions for the 2&times;2 study — a substantial design workload, since each condition had to be internally consistent while differing only on the intended variables. I piloted the materials with a separate group before the main study, recruited and ran all 32 participants, and conducted the statistical analysis including interaction effect testing.</p>
+    <p>I designed and prototyped all four explanation conditions for the 2&times;2 study, each internally consistent while differing only on the intended variables. I piloted the materials with a separate group to confirm that each condition was experienced as intended before the main study, recruited and ran all 32 participants remotely over Zoom, coded critique accuracy and topic coverage alongside a second researcher, and conducted the statistical analysis including Wilcoxon Signed-Rank tests, Mann-Whitney U tests, repeated measures ANOVA, and Pearson chi-squared tests. I also conducted and analyzed the semi-structured interviews using directed qualitative content analysis.</p>
   </div>
 
   <!-- Problem -->
@@ -82,7 +83,7 @@
     </p>
     <div class="highlight-box">
       <h4>The Tradeoff</h4>
-      <p>More information = better reasoning potential, but higher cognitive cost. The question is not which side to pick: it is whether a disclosure strategy can let users have both.</p>
+      <p>More information means better reasoning potential, but higher cognitive cost. The question is not which side to pick: it is whether a disclosure strategy can let users have both. This study shows the answer is more nuanced than either camp expects.</p>
     </div>
   </div>
 
@@ -99,7 +100,7 @@
     </div>
     <div class="rq-block">
       <div class="rq-label">RQ 3</div>
-      <p>Are there interaction effects between information depth and disclosure style?</p>
+      <p>Are there interaction effects between information depth and progressive disclosure on user perceptions and critique outcomes?</p>
     </div>
   </div>
 
@@ -108,7 +109,7 @@
     <h2>Research Process</h2>
     <div class="visual-wrap">
       <div class="process-steps">
-        <div class="process-step">
+        <div class="process-step active">
           <div class="step-circle">1</div>
           <div class="step-label">Prior Work &amp; Gap Identification</div>
         </div>
@@ -128,83 +129,91 @@
           <div class="step-circle">5</div>
           <div class="step-label">Study (n=32)</div>
         </div>
-        <div class="process-step">
+        <div class="process-step active">
           <div class="step-circle">6</div>
           <div class="step-label">Statistical Analysis</div>
         </div>
       </div>
     </div>
-  </div>
 
-  <!-- Design Decisions -->
-  <div class="detail-section">
-    <h2>Designing the 2&times;2</h2>
-    <p class="section-lead">Choosing which two variables to cross — and how to operationalize each level — defined the study's ability to answer the question.</p>
-    <div class="iteration-grid">
-      <div class="iteration-box">
-        <div class="iteration-label">Why these two variables</div>
-        <ul class="iteration-list">
-          <li>Information depth addresses the content question: how much should an explanation say?</li>
-          <li>Disclosure style addresses the delivery question: should all of it arrive at once, or be structured?</li>
-          <li>They are independently manipulable — depth and delivery are orthogonal design decisions practitioners face separately</li>
-          <li>A factorial design reveals not just main effects but whether the variables interact — which turned out to be the most important finding</li>
-        </ul>
+    <div class="process-narrative">
+      <div class="process-narrative-block">
+        <h4>The Gap</h4>
+        <p>Prior work on training dataset explanations showed users value the information they provide. But the question of how much detail to include remained open. Training dataset explanations are substantially longer than most XAI artifacts, and established findings on information depth from shorter explanations did not clearly generalize to them.</p>
       </div>
-      <div class="iteration-box">
-        <div class="iteration-label">Prototype design challenges</div>
-        <ul class="iteration-list">
-          <li>Progressive disclosure had to feel like natural pacing, not artificial gating — getting the trigger mechanism right took multiple pilot iterations</li>
-          <li>The detailed condition had to be genuinely detailed, not just longer — content was carefully structured to add analytical depth, not repetition</li>
-          <li>All four conditions used the same AI system and underlying data so that only format varied</li>
-          <li>A pilot study with a separate group confirmed that each condition was experienced as intended before the main study</li>
-        </ul>
+      <div class="process-narrative-block">
+        <h4>Designing the Study</h4>
+        <p>I crossed two variables: information depth (summary vs. detailed) and progressive disclosure (present vs. absent). I chose depth as a within-subjects factor so participants could directly compare both levels. Progressive disclosure was between-subjects to keep session length manageable; sessions averaged two hours. I prototyped all four explanation interfaces before a pilot study confirmed each condition was experienced as intended.</p>
       </div>
     </div>
+
+    <!-- Study block -->
+    <div class="study-block">
+      <div class="study-block-header">
+        <div class="study-block-badge">Study</div>
+        <div class="study-block-title">Information Depth and Progressive Disclosure in Training Dataset Explanations</div>
+      </div>
+      <div class="study-block-tags">
+        <span class="study-tag">Mixed 2&times;2 Design</span>
+        <span class="study-tag">n = 32</span>
+        <span class="study-tag">Critique Task</span>
+        <span class="study-tag">NASA-TLX</span>
+        <span class="study-tag">Semi-Structured Interviews</span>
+      </div>
+      <p>Each participant critiqued two AI systems (an automated hiring system and an automated admission system), one using a summary explanation and one using a detailed explanation, in counterbalanced order. Both systems were drawn from prior work on training dataset explanations. Participants used Userback to annotate interface elements and enter critique comments. After each critique, they completed Likert-scale questionnaires on trust, fairness, perceived understanding, perceived learning, and cognitive load via the NASA-TLX, plus five comprehension questions. A semi-structured interview closed each session.</p>
+      <div class="study-takeaway">
+        <div class="study-takeaway-label">Key Findings</div>
+        <div class="finding-chips">
+          <div class="finding-chip">
+            <p><strong>Detailed explanations improved every perception measure.</strong> Participants reported significantly higher perceived understanding (p&lt;.001), trust (p=.002), fairness (p&lt;.001), and learning (p&lt;.001) with the detailed explanation, but also significantly higher cognitive load (p=.004).</p>
+          </div>
+          <div class="finding-chip">
+            <p><strong>Detailed explanations produced more and more accurate critiques.</strong> Participants provided more comments with detailed explanations (mean = 9.84 vs. 7.16, p&lt;.001) and more accurate ones (241/315 accurate vs. 153/229 with summary). Only 1 detailed comment was coded as completely inaccurate, versus 6 in summary.</p>
+          </div>
+          <div class="finding-chip">
+            <p><strong>Progressive disclosure affected perceived learning, not cognitive load.</strong> Participants with progressive disclosure reported significantly higher perceived learning (p=.012), particularly with the detailed explanation (p=.017). Cognitive load did not differ significantly between disclosure conditions (p=.543).</p>
+          </div>
+          <div class="finding-chip">
+            <p><strong>Participants unequivocally preferred detailed explanations.</strong> Interview data showed a clear preference for detailed explanations despite the higher cognitive effort, with participants stating that the summary left them without enough context to trust or critique the system.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
   </div>
 
-  <!-- Study Design -->
-  <div class="detail-section">
-    <h2>Study Design</h2>
-    <p>
-      Participants were randomly assigned to one of four conditions created by crossing two
-      independent variables. All conditions used the same AI system (a real-estate recommendation tool)
-      and the same underlying training data content.
-    </p>
-
+  <!-- Study Design section -->
+  <div class="detail-section featured">
+    <h2>The 2&times;2 Design</h2>
+    <p>Information depth was a within-subjects factor: every participant used both summary and detailed explanations, on different scenarios in counterbalanced order. Progressive disclosure was a between-subjects factor: half the participants saw all information upfront, the other half used an interactive interface that revealed one category at a time and required clicking to expand individual questions.</p>
     <div class="visual-wrap">
       <div class="factorial-grid">
         <div class="fg-corner"></div>
-        <div class="fg-header">Static Disclosure</div>
+        <div class="fg-header">Static (No PD)</div>
         <div class="fg-header">Progressive Disclosure</div>
 
         <div class="fg-row-label">Summary</div>
         <div class="fg-cell">
           <h5>Summary · Static</h5>
-          <p>High-level overview shown all at once. Lowest information load, lowest critique depth.</p>
+          <p>Four concise summaries, one per category, shown all at once. Balanced topic coverage; shorter, less accurate critiques.</p>
         </div>
         <div class="fg-cell">
           <h5>Summary · Progressive</h5>
-          <p>Same overview, revealed in steps. Added structure with minimal benefit at low depth.</p>
+          <p>Same concise summaries revealed one category at a time. PD provided little additional benefit at this depth level.</p>
         </div>
 
         <div class="fg-row-label">Detailed</div>
         <div class="fg-cell">
           <h5>Detailed · Static</h5>
-          <p>Full information shown simultaneously. High load, gains partially offset by overload.</p>
+          <p>Full Q&amp;A explanation shown at once. Higher cognitive load, but significantly better perceptions and critique accuracy than summary.</p>
         </div>
         <div class="fg-cell fg-best">
-          <h5>Detailed · Progressive ✓ Best</h5>
-          <p>Full information revealed progressively. Highest critique quality, cognitive load comparable to summary conditions.</p>
+          <h5>Detailed · Progressive ✓</h5>
+          <p>Full Q&amp;A revealed progressively. Same benefits as detailed static, with significantly higher perceived learning.</p>
         </div>
       </div>
-      <p class="visual-caption">The 2&times;2 design. The highlighted cell (detailed information with progressive disclosure) consistently outperformed all alternatives.</p>
+      <p class="visual-caption">Information depth (within-subjects) drove the main effects. Progressive disclosure had a targeted impact: significantly improving perceived learning, but only for the detailed explanation.</p>
     </div>
-
-    <p>
-      After reviewing their assigned explanation, participants completed a NASA Task Load Index (NASA-TLX)
-      to measure cognitive load, then wrote an open-ended critique of the AI system.
-      Critiques were coded for specificity, accuracy, and the identification of data-related concerns.
-    </p>
   </div>
 
   <!-- Methods -->
@@ -213,56 +222,56 @@
     <div class="method-grid">
       <div class="method-card">
         <span class="method-icon">🧪</span>
-        <h4>2&times;2 Factorial Design</h4>
-        <p>Between-subjects design crossing information depth and disclosure style to test main effects and interaction.</p>
+        <h4>Mixed 2&times;2 Factorial Design</h4>
+        <p>Information depth (summary vs. detailed) as within-subjects factor; progressive disclosure (present vs. absent) as between-subjects factor. 32 participants, 2-hour sessions, conducted remotely over Zoom.</p>
       </div>
       <div class="method-card">
         <span class="method-icon">🧠</span>
         <h4>NASA-TLX</h4>
-        <p>Validated cognitive load measure capturing mental demand, effort, and frustration across the four explanation conditions.</p>
+        <p>Validated cognitive load measure capturing mental demand, effort, and frustration. Applied after each critique scenario to compare load across both depth conditions.</p>
       </div>
       <div class="method-card">
         <span class="method-icon">📝</span>
-        <h4>Open-Ended Critique Task</h4>
-        <p>Participants wrote free-form critiques of the AI system. Critiques were coded for depth, specificity, and data issue identification.</p>
+        <h4>Critique Task + Coding</h4>
+        <p>Participants critiqued two AI systems using a simplified SWOT format. Two researchers coded all 544 comments for topic coverage and accuracy using a scheme from prior work.</p>
       </div>
       <div class="method-card">
-        <span class="method-icon">📊</span>
-        <h4>Likert-Scale Questionnaires</h4>
-        <p>Measured perceived usefulness, satisfaction with the explanation, and trust in the AI system after each condition.</p>
+        <span class="method-icon">💬</span>
+        <h4>Semi-Structured Interviews</h4>
+        <p>Post-study interviews probed preferences, interpretation strategies, and reactions to the two explanation levels. Analyzed via directed qualitative content analysis.</p>
       </div>
     </div>
   </div>
 
   <!-- Pull quote -->
   <div class="pull-quote">
-    <blockquote>It felt like it was letting me go at my own pace. I didn't feel rushed or dumped on. I could just keep going deeper when I wanted to.</blockquote>
-    <cite>Participant in the Detailed · Progressive condition</cite>
+    <blockquote>I really felt like with the [summary] one, I didn't have enough context or enough information to really know how the data was being used or where it is coming from. So, the lack of information impacted my trust in the system.</blockquote>
+    <cite>P25, after completing critiques in both depth conditions</cite>
   </div>
 
-  <!-- Insights -->
+  <!-- Key Insights -->
   <div class="detail-section">
     <h2>Key Insights</h2>
     <div class="insight-grid">
       <div class="insight-card">
         <span class="insight-num">01</span>
-        <h4>Progressive disclosure is cognitive scaffolding</h4>
-        <p>Progressive disclosure did not reduce information; it restructured how information arrived. Participants in the detailed-progressive condition processed significantly more content while reporting cognitive load levels comparable to the summary conditions.</p>
+        <h4>Users prefer detail even when it costs them</h4>
+        <p>Participants unanimously preferred detailed explanations despite reporting significantly higher cognitive load. They tolerated extra effort when it meant understanding the system more fully. The cost of confusion was worse than the cost of effort.</p>
       </div>
       <div class="insight-card">
         <span class="insight-num">02</span>
-        <h4>Depth only pays off with the right delivery</h4>
-        <p>Detailed-static explanations did not consistently outperform summary conditions on critique quality. The information was there, but the simultaneous delivery created overload that prevented users from fully engaging with it.</p>
+        <h4>Depth improves accuracy but narrows focus</h4>
+        <p>Detailed explanations produced more accurate critiques and more comments, but participants disproportionately focused on the data collection category. Summary explanations led to shorter critiques with more balanced coverage across topics.</p>
       </div>
       <div class="insight-card">
         <span class="insight-num">03</span>
-        <h4>Ease of use does not mean adequacy</h4>
-        <p>Users preferred summary explanations for how comfortable they felt. But that preference did not translate into better evaluation of the AI system. Perceived accessibility and actual reasoning quality are different things, and conflating them leads to under-designed transparency.</p>
+        <h4>Progressive disclosure shapes the experience, not the load</h4>
+        <p>Progressive disclosure did not reduce cognitive load, but it significantly increased participants' sense of learning, especially with the detailed explanation. Its value is experiential, not computational: it makes engagement feel more intentional and exploratory.</p>
       </div>
       <div class="insight-card">
         <span class="insight-num">04</span>
-        <h4>Interaction effects matter</h4>
-        <p>Progressive disclosure had a significantly stronger benefit for detailed explanations than for summary ones. The mechanism is scaffolding: it only matters when there is enough complexity to scaffold. Designers should not apply progressive disclosure indiscriminately.</p>
+        <h4>Ease of use does not mean adequacy</h4>
+        <p>Summary explanations were easier to process, but that ease did not translate into better critiques or stronger understanding of the AI system. Subjective comfort and actual reasoning quality pointed in different directions.</p>
       </div>
     </div>
   </div>
@@ -270,15 +279,21 @@
   <!-- Implications -->
   <div class="detail-section">
     <h2>Design Implications</h2>
-    <div class="outcome-note">
-      <span class="outcome-label">Impact</span>
-      This study provides the first empirical evidence for when progressive disclosure benefits explanation design, resolving a practical question that interface designers frequently face without guidance. The detailed-plus-progressive pattern is now an actionable design recommendation backed by controlled evidence.
+    <div class="highlight-box">
+      <h4>Core Insight</h4>
+      <p>Detailed explanations consistently outperformed summaries on every perception measure and on critique accuracy, even at higher cognitive cost. For training dataset explanations, which are longer than most XAI artifacts and used during onboarding when users are forming an initial mental model, the evidence favors providing comprehensive information over minimizing it. Data-centric explanations earn this preference precisely because users want to understand what the data says about the system's limitations, not just that the system exists.</p>
     </div>
     <ol class="impl-list">
-      <li><strong>Use detailed + progressive as the target pattern for critical evaluation tasks.</strong> When the goal is to support users in thoroughly evaluating an AI system, detailed information delivered progressively is the optimal design. It outperforms all alternatives on critique quality without the cognitive cost of static delivery.</li>
-      <li><strong>Reserve summaries for orientation, not evaluation.</strong> Summary explanations are appropriate when users need a quick overview before engaging more deeply, not as standalone explanations for high-stakes AI contexts where critical reasoning is needed.</li>
-      <li><strong>Do not optimize explanations for how comfortable they feel.</strong> User preference surveys can be misleading: participants consistently rate simpler explanations as better, even when richer ones produce superior outcomes. Explanation design should be evaluated against behavioral and reasoning measures, not just satisfaction.</li>
+      <li><strong>Default to detail for onboarding and evaluation tasks.</strong> When users are forming an initial mental model of an AI system or are tasked with evaluating it, detailed explanations produce better outcomes. Summaries should not be treated as a safer or more user-friendly default.</li>
+      <li><strong>Use progressive disclosure to improve the learning experience, not to manage cognitive load.</strong> Progressive disclosure did not reduce cognitive load in this study, but it did increase perceived learning for detailed explanations. Its value is in making exploration feel intentional, not in hiding information to lighten the load.</li>
+      <li><strong>Consider interface mechanisms that broaden topic engagement.</strong> Detailed explanations led participants to focus heavily on data collection, the first category in the interface. Designers should consider how to draw attention to other types of information, through visual emphasis, prompting, or ordering, when comprehensive coverage is the goal.</li>
+      <li><strong>Do not optimize explanations for comfort.</strong> Users rated summary explanations as easier but did not produce better critiques with them. Explanation design should be evaluated against reasoning and accuracy measures, not just satisfaction scores.</li>
     </ol>
+  </div>
+
+  <!-- Impact -->
+  <div class="detail-section">
+    <p>This study provides empirical evidence on how information depth shapes users' comprehension and critiques of AI systems, and offers preliminary findings on how progressive disclosure shapes user experience in explanation onboarding. The finding that users prefer and perform better with detailed explanations, despite higher cognitive load, directly challenges the common recommendation to simplify AI explanations. Published at <strong>ACM IUI 2026</strong>.</p>
   </div>
 
   <!-- Project navigation -->
@@ -316,7 +331,7 @@
 </script>
 
 <footer class="site-footer">
-  <p>&copy; 2026 Ariful Islam Anik</p>
+  <p>&copy; 2026 Ariful Islam Anik, PhD</p>
   <p style="font-size: 0.75rem; margin-top: 0.4rem; opacity: 0.6;">Built with the assistance of <a href="https://claude.ai/code" target="_blank" rel="noopener">Claude Code</a>.</p>
 </footer>
 

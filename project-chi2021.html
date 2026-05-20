@@ -3,14 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Does Transparency About Training Data Change How Users Trust AI? | Ariful Islam Anik</title>
+  <title>Does Transparency About Training Data Change How Users Trust AI? | Ariful Islam Anik, PhD</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
 <header class="site-header">
   <nav class="nav-inner">
-    <span class="nav-brand">Ariful Islam Anik</span>
+    <span class="nav-brand">Ariful Islam Anik, PhD</span>
     <ul class="nav-links">
       <li><a href="index.html">Home</a></li>
       <li><a href="projects.html" class="active">Projects</a></li>
@@ -26,7 +26,7 @@
   <!-- Hero -->
   <div class="proj-hero c1">
     <h1>Does Transparency About Training Data Change How Users Trust AI?</h1>
-    <p class="proj-tagline">Studying how transparency about an AI's training data affects how users perceive and trust the system.</p>
+    <p class="proj-tagline">A two-study design research project that introduced data-centric explanations, a new transparency format for everyday users, and tested how they shape trust and fairness perceptions across a range of AI scenarios.</p>
     <div class="hero-stats">
       <div class="hero-stat">
         <div class="hero-stat-val">44</div>
@@ -48,27 +48,20 @@
   <!-- Overview -->
   <div class="detail-section">
     <h2>Overview</h2>
-    <p class="section-lead">
-      Explainable AI has many ways to show how a model behaves. Knowing how a model behaves helps users follow its logic, catch errors, and decide when to rely on it. But without knowing what the model learned from, that picture is incomplete. This project explores what shifts when training data becomes part of the explanation.
-    </p>
-    <p>
-      I designed <strong>data-centric explanations</strong>: descriptions of what an AI model was trained on, written for everyday users rather than technical audiences. Across two sequential user studies, I examined how this form of transparency shapes users' trust and fairness perceptions of AI systems.
-    </p>
+    <p class="section-lead">Most AI explanations show what a model decided. This project asks what happens when people can also see what the model learned from. I designed <strong>data-centric explanations</strong> and ran two user studies to find out how training data transparency shapes trust and fairness perceptions.</p>
   </div>
 
   <!-- My Role -->
   <div class="my-role-block">
     <div class="my-role-label">My Role</div>
-    <p>I led this project end to end: conceptualizing the data-centric explanation framework, designing and iterating on the prototype across both studies, recruiting and running all 44 participants, and conducting the full data analysis.</p>
+    <p>I led this project end to end. I identified the research gap through a literature review, wrote both study protocols, and designed the interview guides for Study 1. I built the prototype iteratively in Figma across both studies, moving from hand-drawn sketches to a tested high-fidelity interface. I recruited and ran all 44 participants, conducted thematic analysis on Study 1 transcripts, and ran the statistical analysis for Study 2.</p>
   </div>
 
   <!-- Problem -->
   <div class="detail-section">
     <h2>The Problem</h2>
 
-    <p>
-      AI explainability has largely focused on model behavior: how a model arrives at its outputs. The data a model was trained on has received far less attention, even though it shapes everything: what the model knows, what it misses, and where it might fail. Without visibility into training data, users are left to trust an AI system without the information they need to evaluate whether that trust is warranted. This project set out to understand what changes when that information is made available.
-    </p>
+    <p>XAI research has focused on model behavior and outputs. Training data, where a model's assumptions and biases originate, has been largely left out of the picture.</p>
 
     <div class="xai-diagram" style="margin-top:1.2rem;">
       <div class="xai-col">
@@ -99,8 +92,7 @@
   <!-- Methods -->
   <div class="detail-section">
     <h2>Methods</h2>
-    <p>The project used two sequential studies with different goals and methods. The first was a formative study aimed at understanding how users respond to training data information and what they find meaningful, analyzed through thematic analysis of semi-structured interviews. The second was an evaluative study that tested a refined prototype under controlled conditions, combining post-task questionnaires and post-study interviews to capture both quantitative and qualitative responses.</p>
-    <div class="method-grid" style="margin-top:1.2rem;">
+    <div class="method-grid" style="margin-top:0;">
       <div class="method-card">
         <span class="method-icon">💬</span>
         <h4>Semi-Structured Interviews</h4>
@@ -159,11 +151,11 @@
     <div class="process-narrative">
       <div class="process-narrative-block">
         <h4>Identifying the Gap</h4>
-        <p>A review of XAI literature revealed a consistent blind spot: existing explanation approaches addressed model behavior and outputs, but none surfaced information about what the model was trained on. Yet training data is where a model's assumptions, coverage, and potential biases originate. This gap motivated the core question of the project.</p>
+        <p>Existing XAI work explained decisions and model behavior. None surfaced what the model was trained on. That gap was the entry point.</p>
       </div>
       <div class="process-narrative-block">
         <h4>Concept Development</h4>
-        <p>The design process began with Gebru et al.'s datasheets, a documentation format built for ML practitioners. Through iterative piloting of different presentation styles and information subsets, I adapted this into a five-category, question-based format accessible to everyday users.</p>
+        <p>Starting from Gebru et al.'s datasheets for ML practitioners, I adapted the format through pilot iterations into a five-category Q&A interface for everyday users.</p>
       </div>
     </div>
 
@@ -210,7 +202,7 @@
         <span class="study-tag">Semi-Structured Interviews</span>
         <span class="study-tag">Thematic Analysis</span>
       </div>
-      <p>The goal of Study 1 was to understand what participants generally know about machine learning systems and how they would respond to data-centric explanations. Participants were shown an early prototype and interviewed about their knowledge of ML, their ideas on algorithmic fairness, and their reactions to the explanation format.</p>
+      <p>I showed an early prototype to 17 participants and interviewed them about their ML knowledge, fairness intuitions, and reactions to the format.</p>
       <div class="study-takeaway">
         <div class="study-takeaway-label">Key Findings</div>
         <ul class="iteration-list">
@@ -234,9 +226,9 @@
   </div>
 
   <!-- Prototype carousel -->
-  <div class="detail-section">
+  <div class="detail-section featured">
     <h2>Final Prototype</h2>
-    <p>Following Study 1, the prototype was refined and built into a high-fidelity interface used in the evaluative study. It presented training data information across five categories using a question-based format, allowing users to explore at their own pace.</p>
+    <p>Study 1 feedback drove three key design decisions: a Q&amp;A format over narrative (users wanted to control what they explored), a bar chart for demographics (users spotted imbalances visually but missed the same numbers in text), and progressive disclosure within each category to avoid first-load overwhelm.</p>
     <div class="carousel" id="chi2021-prototype-carousel">
       <div class="carousel-track">
         <button class="carousel-btn prev" aria-label="Previous">&#8592;</button>
@@ -294,46 +286,31 @@
         <span class="study-tag">Semi-Structured Interviews</span>
         <span class="study-tag">Mixed Methods</span>
       </div>
-      <p>The second study investigated how data-centric explanations impact trust and fairness judgments across a range of AI scenarios and training data characteristics. Participants (9 ML experts, 8 intermediates, 10 beginners) interacted with four real-world scenarios: predictive bail decisions, facial expression recognition, automated admission decisions, and automated speech recognition. Two scenarios showed balanced training data; two revealed clear red flags such as demographic imbalances and high error rates. After reviewing each explanation, participants completed validated Likert-scale questionnaires on trust, fairness, and comfort, followed by a 40-60 minute semi-structured interview.</p>
+      <p>27 participants across three expertise levels interacted with four AI scenarios: two with balanced training data, two with clear red flags. After each, they rated trust, fairness, and comfort, then completed a semi-structured interview.</p>
       <div class="study-takeaway">
         <div class="study-takeaway-label">Key Findings</div>
-        <ul class="iteration-list">
-          <li>Trust, fairness, and comfort were all significantly lower when explanations revealed red-flag training data (p &lt; .001 for trust and fairness)</li>
-          <li>Perceived utility of the explanations remained consistently high regardless of data quality: participants rated the explanations highly for helping them understand and reflect on the training process</li>
-          <li>Expertise did not significantly affect any questionnaire measure; beginners and experts responded similarly to the explanations</li>
-          <li>Demographics was the most influential category: two-thirds of participants cited it as the most useful, and participants across expertise levels were able to identify potential biases from the visualizations</li>
-          <li>High-stakes scenarios (bail decisions, admissions) prompted deeper engagement; most participants (22/27) felt explanations were less necessary for low-stakes systems</li>
-          <li>Explanations helped most participants (21/27) assess fairness to at least some extent, though some experts wanted additional information on decision factors</li>
-        </ul>
+        <div class="finding-chips">
+          <div class="finding-chip">
+            <p><strong>Trust tracked data quality.</strong> Trust, fairness, and comfort all dropped significantly when explanations revealed red-flag training data, and rose when training data was balanced.</p>
+          </div>
+          <div class="finding-chip">
+            <p><strong>Demographics mattered most.</strong> Two-thirds of participants cited demographic distribution as the most influential category for assessing potential bias.</p>
+          </div>
+          <div class="finding-chip">
+            <p><strong>Expertise made no difference.</strong> Beginners and experts engaged with the explanations similarly — no significant effect of ML background on any measure.</p>
+          </div>
+          <div class="finding-chip">
+            <p><strong>Stakes shaped engagement.</strong> Participants probed explanations most carefully in high-stakes scenarios like bail and admissions, and saw less need for them in low-stakes contexts.</p>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 
-  <!-- Key Insights -->
-  <div class="detail-section">
-    <h2>Key Insights</h2>
-    <div class="insight-grid">
-      <div class="insight-card">
-        <span class="insight-num">01</span>
-        <h4>Training data transparency produces calibrated, not inflated, trust</h4>
-        <p>Trust moved in the direction the data warranted: up when explanations showed balanced, well-documented training data, and down when they surfaced red flags like demographic imbalances or high error rates. Participants were motivated, capable auditors when given the right information.</p>
-      </div>
-      <div class="insight-card">
-        <span class="insight-num">02</span>
-        <h4>Data-centric explanations support fairness reasoning, but not fully</h4>
-        <p>Demographics was the most influential category: two-thirds of participants cited it as the most useful, and people across all expertise levels identified potential biases from the visualizations. Most participants (21/27) felt the explanations helped them assess fairness, though some experts also wanted information on the decision process.</p>
-      </div>
-      <div class="insight-card">
-        <span class="insight-num">03</span>
-        <h4>Non-experts were more capable than ML practitioners expected</h4>
-        <p>Some ML-experienced participants worried the explanations would be too complex for non-experts. But beginners engaged with the information just as effectively as intermediates and experts, and no non-expert reported difficulty understanding the content.</p>
-      </div>
-      <div class="insight-card">
-        <span class="insight-num">04</span>
-        <h4>High stakes amplify the value of transparency</h4>
-        <p>Participants engaged most carefully with explanations in scenarios involving bail decisions and admissions, where the consequences of biased systems are most severe. Most felt explanations were less necessary for low-stakes systems like social media recommendations.</p>
-      </div>
-    </div>
+  <!-- Pull quote -->
+  <div class="pull-quote">
+    <blockquote>If I did not have the explanations, the results would seem more reliable. I would have no idea about the distribution of gender, country, and other demographics. I would have no idea how the data was collected, by whom, or by computer or manually. So, I think the explanations helped me to have a more in-depth idea about the system.</blockquote>
+    <cite>Participant, Study 2</cite>
   </div>
 
   <!-- Implications -->
@@ -341,13 +318,13 @@
     <h2>Design Implications</h2>
     <div class="highlight-box">
       <h4>Core Insight</h4>
-      <p>Transparency is not just about explaining decisions. It is about giving people the context they need to decide how much to trust those decisions in the first place.</p>
+      <p>Transparency is not just about explaining decisions. It is about giving people the context they need to decide how much to trust those decisions in the first place. Data-centric explanations, by surfacing what a model learned from, provide exactly that context.</p>
     </div>
     <ol class="impl-list">
-      <li><strong>Make training data a first-class transparency artifact.</strong> Data-centric explanations should sit alongside outcome-level explanations, not replace them. Users can reason about data quality and demographics on their own terms; they do not need to understand a model's internals to form a meaningful judgment.</li>
-      <li><strong>Prioritize demographics and collection in the explanation design.</strong> These two categories drove the most trust and fairness reasoning. Explanation designers should lead with what matters most to users, not what is easiest to extract from a model.</li>
-      <li><strong>Design for calibrated trust, not maximum trust.</strong> An explanation that lowers trust by revealing problems is not a failed design; it is working as intended. The goal is informed judgment, not reassurance.</li>
-      <li><strong>Do not underestimate non-expert users.</strong> The assumption that training data information will overwhelm general audiences was not supported. Explanation designers should test accessibility with real users rather than relying on expert intuitions about what non-experts can handle.</li>
+      <li><strong>Make training data a first-class transparency artifact.</strong> Users reasoned about data quality and demographics on their own terms without needing to understand a model's internals.</li>
+      <li><strong>Lead with demographics and collection.</strong> Two-thirds of participants cited demographics as most useful; they spotted biases from the chart before reading a single word.</li>
+      <li><strong>Design for calibrated trust, not maximum trust.</strong> Explanations that lowered trust by surfacing real problems were doing exactly what they should.</li>
+      <li><strong>Do not underestimate non-expert users.</strong> Study 2 found no significant difference between beginners and ML experts on any measure.</li>
     </ol>
   </div>
 
@@ -389,7 +366,7 @@
 </script>
 
 <footer class="site-footer">
-  <p>&copy; 2026 Ariful Islam Anik</p>
+  <p>&copy; 2026 Ariful Islam Anik, PhD</p>
   <p style="font-size: 0.75rem; margin-top: 0.4rem; opacity: 0.6;">Built with the assistance of <a href="https://claude.ai/code" target="_blank" rel="noopener">Claude Code</a>.</p>
 </footer>
 
