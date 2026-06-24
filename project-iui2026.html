@@ -516,6 +516,44 @@
 })();
 </script>
 
+<nav class="page-toc" id="pageToc"></nav>
+<a class="back-float" href="projects.html" id="backFloat">&#8592; Projects</a>
+<script>
+(function () {
+  var toc = document.getElementById('pageToc');
+  var headings = Array.from(document.querySelectorAll('.page-wrap h2')).filter(function (h) {
+    return !h.closest('[style*="display:none"]');
+  });
+  headings.forEach(function (h, i) {
+    if (!h.id) h.id = 'sec-' + i;
+    var a = document.createElement('a');
+    a.className = 'toc-dot'; a.href = '#' + h.id;
+    a.innerHTML = '<span class="toc-dot-label">' + h.textContent + '</span><span class="toc-dot-circle"></span>';
+    a.addEventListener('click', function (e) {
+      e.preventDefault();
+      document.getElementById(h.id).scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+    toc.appendChild(a);
+  });
+  var dots = toc.querySelectorAll('.toc-dot');
+  var secObs = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (e.isIntersecting) {
+        dots.forEach(function (d) { d.classList.remove('active'); });
+        var idx = headings.indexOf(e.target);
+        if (idx >= 0) dots[idx].classList.add('active');
+      }
+    });
+  }, { rootMargin: '-15% 0px -75% 0px' });
+  headings.forEach(function (h) { secObs.observe(h); });
+
+  var backBtn = document.getElementById('backFloat');
+  window.addEventListener('scroll', function () {
+    backBtn.classList.toggle('visible', document.documentElement.scrollTop > 400);
+  }, { passive: true });
+})();
+</script>
+
 <button class="contact-float" id="contactFloat" aria-label="Copy email address">
   <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
   <span class="contact-float-tip" id="contactTip">Copy email</span>

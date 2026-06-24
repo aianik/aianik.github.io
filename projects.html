@@ -28,15 +28,22 @@
     <p>End-to-end UX research and design projects, from problem framing and prototype to evaluated design principles.</p>
   </div>
 
+  <div class="filter-bar">
+    <span class="filter-hint">Click any method tag to filter</span>
+    <button class="filter-reset" id="filterReset" hidden>Clear filter &times;</button>
+  </div>
+
   <div class="projects-grid" id="projectsGrid">
 
     <a class="proj-card" href="project-chi2021.html" data-tags="Prototype Design,Interview Study,Iterative Design,Thematic Analysis,Mixed Methods">
       <div class="proj-strip c1">
-        <span class="proj-num">01</span>
+        <span class="proj-ghost">Trust</span>
+        <span class="proj-num">CHI 2021</span>
         <h2>Does Transparency About Training Data Change How Users Trust AI?</h2>
-        <p class="proj-tagline">Two studies, 44 participants. When users could see what an AI was trained on, trust tracked data quality directly: revealing problems lowered trust, revealing balanced data raised it. The effect held regardless of ML expertise.</p>
       </div>
       <div class="proj-body">
+        <p class="proj-tagline">Two studies, 44 participants. What happens when users can see what an AI was trained on?</p>
+        <div class="proj-outcome">Trust rose with good training data and fell with bad, consistently across all 4 AI scenarios and regardless of ML expertise.</div>
         <div class="proj-tags">
           <span class="tag" data-tag="Prototype Design">Prototype Design</span>
           <span class="tag" data-tag="Interview Study">Interview Study</span>
@@ -50,11 +57,13 @@
 
     <a class="proj-card" href="project-vlhcc2024.html" data-tags="Prototype Design,Controlled Experiment,Qualitative Coding,Mixed Methods">
       <div class="proj-strip c2">
-        <span class="proj-num">02</span>
+        <span class="proj-ghost">Style</span>
+        <span class="proj-num">VL/HCC 2024</span>
         <h2>Does Explanation Presentation Format Affect How Users Assess and Understand AI?</h2>
-        <p class="proj-tagline">Same information, two formats, different outcomes. Narrative with visuals produced 66% high-accuracy critiques. Structured Q&amp;A produced 42%. Format alone, not content, determined how well users could evaluate the AI.</p>
       </div>
       <div class="proj-body">
+        <p class="proj-tagline">Same information, two presentation formats. Does how AI explains itself change how well users can evaluate it?</p>
+        <div class="proj-outcome">Narrative format produced 66% high-accuracy critiques vs 42% for Q&amp;A. Same content, presentation alone drove the gap.</div>
         <div class="proj-tags">
           <span class="tag" data-tag="Prototype Design">Prototype Design</span>
           <span class="tag" data-tag="Controlled Experiment">Controlled Experiment</span>
@@ -67,11 +76,13 @@
 
     <a class="proj-card" href="project-iui2026.html" data-tags="Prototype Design,Factorial Design,Cognitive Load,Mixed Methods">
       <div class="proj-strip c3">
-        <span class="proj-num">03</span>
+        <span class="proj-ghost">Depth</span>
+        <span class="proj-num">IUI 2026</span>
         <h2>How Much Detail Should a Training Data Explanation Include?</h2>
-        <p class="proj-tagline">Conventional wisdom says simplify AI explanations. This study pushed back: users produced more comments and more accurate ones with detailed explanations, accepted the extra cognitive load willingly, and found progressive disclosure improved learning, not efficiency.</p>
       </div>
       <div class="proj-body">
+        <p class="proj-tagline">Conventional wisdom says simplify AI explanations. This study pushed back.</p>
+        <div class="proj-outcome">More detail produced more and better critiques. Users willingly accepted the extra cognitive load, contradicting the "simplify AI" assumption.</div>
         <div class="proj-tags">
           <span class="tag" data-tag="Prototype Design">Prototype Design</span>
           <span class="tag" data-tag="Factorial Design">Factorial Design</span>
@@ -84,11 +95,13 @@
 
     <a class="proj-card" href="project-ailiteracy.html" data-tags="Scale Development,Survey Research,Psychometric Validation,Statistical Analysis">
       <div class="proj-strip c4">
-        <span class="proj-num">04</span>
+        <span class="proj-ghost">AILS</span>
+        <span class="proj-num">CHI 2025</span>
         <h2>How Do We Measure AI Literacy: Developing a Scale That Captures Both Knowledge and Confidence?</h2>
-        <p class="proj-tagline">476 participants, two independent validation samples. The scale works, but the real finding is the calibration pattern: people who think they know AI the best are the most likely to overestimate what they actually know.</p>
       </div>
       <div class="proj-body">
+        <p class="proj-tagline">476 participants, two independent validation samples. How do you measure what someone actually knows about AI vs what they think they know?</p>
+        <div class="proj-outcome">High self-raters were the least accurate. Calibration mismatch confirmed across 476 participants in two independent samples.</div>
         <div class="proj-tags">
           <span class="tag" data-tag="Scale Development">Scale Development</span>
           <span class="tag" data-tag="Survey Research">Survey Research</span>
@@ -99,6 +112,10 @@
       </div>
     </a>
 
+    <div class="projects-empty" id="projectsEmpty" hidden>
+      No projects match this filter.
+      <br><button class="projects-empty-reset" id="emptyReset">Clear filter</button>
+    </div>
   </div>
 
 </main>
@@ -110,36 +127,37 @@
 </footer>
 
 <script>
-  const cards = document.querySelectorAll('.proj-card');
-  let activeTag = null;
+  var cards = document.querySelectorAll('.proj-card');
+  var filterReset = document.getElementById('filterReset');
+  var projectsEmpty = document.getElementById('projectsEmpty');
+  var emptyReset = document.getElementById('emptyReset');
+  var activeTag = null;
 
-  document.querySelectorAll('.tag[data-tag]').forEach(tag => {
-    tag.addEventListener('click', e => {
-      e.preventDefault();
-      e.stopPropagation();
+  function updateFilter() {
+    cards.forEach(function(card) {
+      var cardTags = card.dataset.tags.split(',').map(function(t) { return t.trim(); });
+      card.classList.toggle('card-hidden', !(!activeTag || cardTags.includes(activeTag)));
+    });
+    document.querySelectorAll('.tag[data-tag]').forEach(function(t) {
+      t.classList.toggle('tag-active', t.dataset.tag === activeTag);
+    });
+    filterReset.hidden = !activeTag;
+    var anyVisible = Array.from(cards).some(function(c) { return !c.classList.contains('card-hidden'); });
+    projectsEmpty.hidden = anyVisible;
+  }
 
-      const clicked = tag.dataset.tag;
+  function clearFilter() { activeTag = null; updateFilter(); }
 
-      if (activeTag === clicked) {
-        // Deselect: show all
-        activeTag = null;
-      } else {
-        activeTag = clicked;
-      }
-
-      // Update card visibility
-      cards.forEach(card => {
-        const cardTags = card.dataset.tags.split(',').map(t => t.trim());
-        const match = !activeTag || cardTags.includes(activeTag);
-        card.classList.toggle('card-hidden', !match);
-      });
-
-      // Update tag highlight state across all cards
-      document.querySelectorAll('.tag[data-tag]').forEach(t => {
-        t.classList.toggle('tag-active', t.dataset.tag === activeTag);
-      });
+  document.querySelectorAll('.tag[data-tag]').forEach(function(tag) {
+    tag.addEventListener('click', function(e) {
+      e.preventDefault(); e.stopPropagation();
+      activeTag = (activeTag === tag.dataset.tag) ? null : tag.dataset.tag;
+      updateFilter();
     });
   });
+
+  filterReset.addEventListener('click', clearFilter);
+  emptyReset.addEventListener('click', clearFilter);
 </script>
 
 <script>
