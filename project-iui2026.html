@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+<div id="readingProgress" class="reading-progress"></div>
 
 <header class="site-header">
   <nav class="nav-inner">
@@ -444,9 +445,40 @@
 </script>
 
 <footer class="site-footer">
+  <p class="footer-cta">Open to new opportunities. <a href="mailto:anik.mdariful@gmail.com">Let&rsquo;s talk.</a></p>
   <p>&copy; 2026 Ariful Islam Anik, PhD</p>
   <p style="font-size: 0.75rem; margin-top: 0.4rem; opacity: 0.6;">Built with the assistance of <a href="https://claude.ai/code" target="_blank" rel="noopener">Claude Code</a>.</p>
 </footer>
 
+<script>
+(function () {
+  var bar = document.getElementById('readingProgress');
+  if (!bar) return;
+  window.addEventListener('scroll', function () {
+    var scrolled = document.documentElement.scrollTop;
+    var total = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    bar.style.width = total > 0 ? (scrolled / total * 100) + '%' : '0%';
+  }, { passive: true });
+})();
+
+(function () {
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  var chart = document.querySelector('.bar-chart');
+  if (!chart) return;
+  var fills = chart.querySelectorAll('.bar-fill');
+  fills.forEach(function (f) {
+    f.dataset.tw = f.style.width;
+    f.style.width = '0%';
+    f.style.transition = 'width 0.9s cubic-bezier(0.4, 0, 0.2, 1)';
+  });
+  new IntersectionObserver(function (entries) {
+    if (!entries[0].isIntersecting) return;
+    fills.forEach(function (f, i) {
+      setTimeout(function () { f.style.width = f.dataset.tw; }, i * 130);
+    });
+    this.disconnect();
+  }, { threshold: 0.4 }).observe(chart);
+})();
+</script>
 </body>
 </html>

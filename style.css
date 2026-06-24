@@ -31,6 +31,11 @@
 
 html { scroll-behavior: smooth; }
 
+@keyframes pageFadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
 body {
   font-family: var(--font-body);
   font-size: 15.5px;
@@ -38,6 +43,22 @@ body {
   color: var(--text);
   background: var(--bg);
   -webkit-font-smoothing: antialiased;
+  animation: pageFadeIn 0.4s ease both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body { animation: none; }
+}
+
+.reading-progress {
+  position: fixed;
+  top: 0; left: 0;
+  width: 0%;
+  height: 3px;
+  background: linear-gradient(90deg, var(--teal), var(--teal-lt));
+  z-index: 200;
+  transition: width 0.08s linear;
+  pointer-events: none;
 }
 
 a { color: var(--teal); text-decoration: none; }
@@ -259,6 +280,12 @@ section { margin-bottom: 3.5rem; }
 }
 .site-footer a { color: rgba(255,255,255,0.35); }
 .site-footer a:hover { color: var(--teal-lt); text-decoration: none; }
+.footer-cta {
+  font-size: 0.9rem; color: rgba(255,255,255,0.72);
+  margin-bottom: 1rem; letter-spacing: 0.01em;
+}
+.footer-cta a { color: var(--teal-lt); font-weight: 600; text-decoration: none; }
+.footer-cta a:hover { text-decoration: underline; color: var(--teal-lt); }
 
 /* ── Page header ────────────────────────────────── */
 .page-header {
