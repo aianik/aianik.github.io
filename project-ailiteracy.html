@@ -387,6 +387,74 @@
   });
 </script>
 
+<script>
+(function () {
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  var vh = window.innerHeight;
+
+  var sections = document.querySelectorAll('.detail-section, .my-role-block, .pull-quote, .proj-pagination, .highlight-box');
+  var sObs = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (!e.isIntersecting) return;
+      e.target.style.opacity = '1';
+      e.target.style.transform = 'translateY(0)';
+      sObs.unobserve(e.target);
+    });
+  }, { threshold: 0.06 });
+  sections.forEach(function (el) {
+    if (el.getBoundingClientRect().top >= vh * 0.92) {
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(22px)';
+      el.style.transition = 'opacity 0.55s ease, transform 0.55s ease';
+      sObs.observe(el);
+    }
+  });
+
+  document.querySelectorAll('.method-grid, .insight-grid, .finding-chips').forEach(function (grid) {
+    if (grid.getBoundingClientRect().top < vh * 0.92) return;
+    Array.from(grid.children).forEach(function (child, i) {
+      child.style.opacity = '0';
+      child.style.transform = 'translateY(16px)';
+      child.style.transition = 'opacity 0.4s ease ' + (i * 90) + 'ms, transform 0.4s ease ' + (i * 90) + 'ms';
+    });
+    var gObs = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (!e.isIntersecting) return;
+        Array.from(e.target.children).forEach(function (child) {
+          child.style.opacity = '1';
+          child.style.transform = 'translateY(0)';
+        });
+        gObs.unobserve(e.target);
+      });
+    }, { threshold: 0.1 });
+    gObs.observe(grid);
+  });
+
+  document.querySelectorAll('.hero-stat-val').forEach(function (el) {
+    var raw = el.textContent.trim();
+    if (!/^\d/.test(raw)) return;
+    var num = parseFloat(raw);
+    if (isNaN(num)) return;
+    var isInt = raw.indexOf('.') === -1;
+    var cObs = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (!e.isIntersecting) return;
+        var start = performance.now();
+        function tick(now) {
+          var t = Math.min((now - start) / 900, 1);
+          var eased = 1 - Math.pow(1 - t, 3);
+          el.textContent = isInt ? Math.round(num * eased) : (num * eased).toFixed(1);
+          if (t < 1) requestAnimationFrame(tick); else el.textContent = raw;
+        }
+        requestAnimationFrame(tick);
+        cObs.unobserve(el);
+      });
+    }, { threshold: 0.5 });
+    cObs.observe(el);
+  });
+})();
+</script>
+
 <footer class="site-footer">
   <p>&copy; 2026 Ariful Islam Anik, PhD</p>
   <p style="font-size: 0.75rem; margin-top: 0.4rem; opacity: 0.6;">Built with the assistance of <a href="https://claude.ai/code" target="_blank" rel="noopener">Claude Code</a>.</p>
