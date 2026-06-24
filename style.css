@@ -604,7 +604,14 @@ section { margin-bottom: 3.5rem; }
 }
 .method-card:hover { box-shadow: 0 6px 20px rgba(0,0,0,0.07); transform: translateY(-1px); }
 .method-icon {
-  font-size: 1.5rem; margin-bottom: 0.6rem; display: block;
+  display: flex; align-items: center; justify-content: center;
+  width: 2.4rem; height: 2.4rem; border-radius: 8px;
+  background: var(--teal-bg); margin-bottom: 0.75rem;
+}
+.method-icon svg {
+  width: 1.15rem; height: 1.15rem;
+  stroke: var(--teal); fill: none;
+  stroke-width: 2; stroke-linecap: round; stroke-linejoin: round;
 }
 .method-card h4 {
   font-family: var(--font-ui); font-size: 0.85rem;
@@ -931,7 +938,7 @@ section { margin-bottom: 3.5rem; }
 .carousel-slide { display: none; background: var(--white); }
 .carousel-slide.active { display: block; }
 .carousel-slide img {
-  width: 100%; height: 300px;
+  width: 100%; height: 380px;
   display: block; object-fit: contain;
   background: var(--white);
   padding: 1rem 2rem;
@@ -1000,7 +1007,18 @@ section { margin-bottom: 3.5rem; }
 }
 .xai-col:last-child { border-right: none; }
 .xai-col.highlight { background: #f0fdfa; border-top: 3px solid var(--teal); }
-.xai-col-icon { font-size: 1.8rem; margin-bottom: 0.5rem; display: block; }
+.xai-col-icon {
+  display: flex; align-items: center; justify-content: center;
+  width: 2.8rem; height: 2.8rem; border-radius: 10px;
+  background: #f1f5f9; margin-bottom: 0.65rem;
+}
+.xai-col-icon svg {
+  width: 1.25rem; height: 1.25rem;
+  stroke: var(--navy); fill: none;
+  stroke-width: 2; stroke-linecap: round; stroke-linejoin: round;
+}
+.xai-col.highlight .xai-col-icon { background: var(--teal-bg); }
+.xai-col.highlight .xai-col-icon svg { stroke: var(--teal); }
 .xai-col h4 {
   font-family: var(--font-ui); font-size: 0.82rem;
   font-weight: 700; color: var(--navy); margin-bottom: 0.3rem;
@@ -1136,20 +1154,37 @@ section { margin-bottom: 3.5rem; }
 
 /* ── Project pagination ─────────────────────────── */
 .proj-pagination {
-  display: flex; justify-content: space-between; align-items: center;
+  display: flex; align-items: stretch;
   padding: 2.5rem 0 0; margin-top: 2rem;
   border-top: 1px solid var(--border); gap: 1rem;
 }
-.proj-prev-link,
-.proj-next-link {
-  font-family: var(--font-ui); font-size: 0.83rem;
-  font-weight: 600; color: var(--navy);
-  display: flex; align-items: center; gap: 0.5rem;
-  text-decoration: none; transition: color 0.15s;
+.proj-pag-item {
+  display: flex; align-items: center; gap: 0.85rem;
+  text-decoration: none; padding: 0.9rem 1.1rem;
+  border-radius: 10px; border: 1px solid var(--border);
+  transition: box-shadow 0.18s, border-color 0.18s;
+  max-width: 48%;
 }
-.proj-prev-link:hover,
-.proj-next-link:hover { color: var(--teal); text-decoration: none; }
-.proj-prev-arrow, .proj-next-arrow { font-size: 1rem; }
+.proj-pag-item:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.08); border-color: var(--teal); text-decoration: none; }
+.proj-pag-item.next { margin-left: auto; text-align: right; }
+.proj-pag-chip {
+  width: 2.8rem; height: 2.8rem; border-radius: 8px; flex-shrink: 0;
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--font-ui); font-size: 0.95rem; font-weight: 800; color: #fff;
+}
+.proj-pag-chip.c1 { background: #1e1b4b; }
+.proj-pag-chip.c2 { background: #134e4a; }
+.proj-pag-chip.c3 { background: #312e81; }
+.proj-pag-chip.c4 { background: #064e3b; }
+.proj-pag-text { display: flex; flex-direction: column; gap: 0.15rem; }
+.proj-pag-label {
+  font-family: var(--font-ui); font-size: 0.68rem; font-weight: 600;
+  color: var(--muted); text-transform: uppercase; letter-spacing: 0.07em;
+}
+.proj-pag-title {
+  font-family: var(--font-ui); font-size: 0.82rem;
+  font-weight: 600; color: var(--navy); line-height: 1.35;
+}
 
 /* ── Role contribution grid ─────────────────────── */
 .role-grid {
@@ -1326,7 +1361,8 @@ section { margin-bottom: 3.5rem; }
 
 @media (max-width: 680px) {
   .iteration-grid { grid-template-columns: 1fr; }
-  .proj-pagination { flex-direction: column; align-items: flex-start; }
+  .proj-pagination { flex-direction: column; }
+  .proj-pag-item, .proj-pag-item.next { max-width: 100%; margin-left: 0; }
   .role-grid { grid-template-columns: 1fr; }
   .proto-grid { grid-template-columns: 1fr; }
 }

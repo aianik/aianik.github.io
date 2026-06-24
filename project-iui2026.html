@@ -119,22 +119,22 @@
     <h2>Methods</h2>
     <div class="method-grid">
       <div class="method-card">
-        <span class="method-icon">🧪</span>
+        <span class="method-icon"><svg viewBox="0 0 24 24"><path d="M6 2v6l-2 9a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1l-2-9V2"/><line x1="6" y1="7" x2="18" y2="7"/><line x1="6" y1="2" x2="18" y2="2"/></svg></span>
         <h4>Mixed 2&times;2 Factorial Design</h4>
         <p>Information depth (summary vs. detailed) as within-subjects factor; progressive disclosure (present vs. absent) as between-subjects factor. 32 participants, 2-hour sessions, conducted remotely over Zoom.</p>
       </div>
       <div class="method-card">
-        <span class="method-icon">🧠</span>
+        <span class="method-icon"><svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></span>
         <h4>NASA-TLX</h4>
         <p>Validated cognitive load measure capturing mental demand, effort, and frustration. Applied after each critique scenario to compare load across both depth conditions.</p>
       </div>
       <div class="method-card">
-        <span class="method-icon">📝</span>
+        <span class="method-icon"><svg viewBox="0 0 24 24"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg></span>
         <h4>Critique Task + Coding</h4>
         <p>Participants critiqued two AI systems using a simplified SWOT format. Two researchers coded all 544 comments for topic coverage and accuracy using a scheme from prior work.</p>
       </div>
       <div class="method-card">
-        <span class="method-icon">💬</span>
+        <span class="method-icon"><svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></span>
         <h4>Semi-Structured Interviews</h4>
         <p>Post-study interviews probed preferences, interpretation strategies, and reactions to the two explanation levels. Analyzed via directed qualitative content analysis.</p>
       </div>
@@ -342,15 +342,27 @@
     <p>Progressive disclosure is a UX pattern worth using, but for the right reason: it makes exploration feel deliberate and increases perceived learning. It does not reduce cognitive load. Published at <strong>ACM IUI 2026</strong>.</p>
   </div>
 
+  <!-- What I'd do differently -->
+  <div class="detail-section" style="display:none;">
+    <h2>What I&rsquo;d Do Differently</h2>
+    <p>All four conditions used the same resume screening AI domain, which limits how confidently we can generalize the depth effects. Replicating with a different domain, such as medical diagnosis or loan approval, would establish whether users&rsquo; preference for detailed information is domain-independent or tied to the stakes of the specific AI. I would also add eye-tracking: the core interpretation, that more detail drives engagement which in turn improves critique accuracy, currently rests on behavioral evidence alone. Gaze data would directly test whether participants actually read the additional content or skim past it.</p>
+  </div>
+
   <!-- Project navigation -->
   <div class="proj-pagination">
-    <a href="project-vlhcc2024.html" class="proj-prev-link">
-      <span class="proj-prev-arrow">←</span>
-      Previous: Does Explanation Presentation Format Affect How Users Assess and Understand AI?
+    <a href="project-vlhcc2024.html" class="proj-pag-item prev">
+      <div class="proj-pag-chip c2">02</div>
+      <div class="proj-pag-text">
+        <span class="proj-pag-label">&larr; Previous</span>
+        <span class="proj-pag-title">Explanation Presentation Style</span>
+      </div>
     </a>
-    <a href="project-ailiteracy.html" class="proj-next-link">
-      Next Project: How Do We Measure AI Literacy: Developing a Scale That Captures Both Knowledge and Confidence?
-      <span class="proj-next-arrow">→</span>
+    <a href="project-ailiteracy.html" class="proj-pag-item next">
+      <div class="proj-pag-text">
+        <span class="proj-pag-label">Next &rarr;</span>
+        <span class="proj-pag-title">AI Literacy Scale Development</span>
+      </div>
+      <div class="proj-pag-chip c4">04</div>
     </a>
   </div>
 
@@ -445,7 +457,7 @@
 </script>
 
 <footer class="site-footer">
-  <p class="footer-cta">Open to new opportunities. <a href="mailto:anik.mdariful@gmail.com">Let&rsquo;s talk.</a></p>
+  <p class="footer-cta">Open to opportunities. <a href="mailto:anik.mdariful@gmail.com">Let&rsquo;s talk.</a></p>
   <p>&copy; 2026 Ariful Islam Anik, PhD</p>
   <p style="font-size: 0.75rem; margin-top: 0.4rem; opacity: 0.6;">Built with the assistance of <a href="https://claude.ai/code" target="_blank" rel="noopener">Claude Code</a>.</p>
 </footer>
