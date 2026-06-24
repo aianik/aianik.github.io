@@ -37,6 +37,10 @@
         <div class="hero-stat-label">User Studies</div>
       </div>
       <div class="hero-stat">
+        <div class="hero-stat-val">4</div>
+        <div class="hero-stat-label">AI Scenarios</div>
+      </div>
+      <div class="hero-stat">
         <div class="hero-stat-val">CHI &rsquo;21</div>
         <div class="hero-stat-label">Published At</div>
       </div>
@@ -54,7 +58,24 @@
   <!-- My Role -->
   <div class="my-role-block">
     <div class="my-role-label">My Role</div>
-    <p>I led this project end to end. I identified the research gap through a literature review, wrote both study protocols, and designed the interview guides for Study 1. I built the prototype iteratively in Figma across both studies, moving from hand-drawn sketches to a tested high-fidelity interface. I recruited and ran all 44 participants, conducted thematic analysis on Study 1 transcripts, and ran the statistical analysis for Study 2.</p>
+    <div class="role-grid">
+      <div class="role-item">
+        <span class="role-item-label">Research &amp; Concept Design</span>
+        <p>Identified the research gap through literature review. Originated the concept of data-centric explanations and adapted Gebru et al.'s datasheet format into an accessible Q&amp;A interface for everyday users.</p>
+      </div>
+      <div class="role-item">
+        <span class="role-item-label">Prototype Development</span>
+        <p>Built the explanation prototype iteratively in Figma, from early hand-drawn sketches through two rounds of study-driven refinement to a tested high-fidelity interface.</p>
+      </div>
+      <div class="role-item">
+        <span class="role-item-label">Study Execution</span>
+        <p>Wrote both study protocols, designed Study 1 interview guides, obtained REB approval, and recruited and ran all 44 participants in-person across both studies.</p>
+      </div>
+      <div class="role-item">
+        <span class="role-item-label">Analysis</span>
+        <p>Conducted thematic analysis on Study 1 interview transcripts and ran all statistical analyses for Study 2, including ANOVAs across trust, fairness, and comfort measures.</p>
+      </div>
+    </div>
   </div>
 
   <!-- Problem -->
@@ -86,7 +107,10 @@
   <!-- Research Questions -->
   <div class="detail-section">
     <h2>Research Question</h2>
-    <blockquote class="rq-single">How does transparency about an AI system's training data affect how users perceive and trust the system?</blockquote>
+    <div class="rq-block">
+      <div class="rq-label">RQ</div>
+      <p>How does transparency about an AI system's training data affect how users perceive and trust the system?</p>
+    </div>
   </div>
 
   <!-- Methods -->
@@ -205,13 +229,20 @@
       <p>I showed an early prototype to 17 participants and interviewed them about their ML knowledge, fairness intuitions, and reactions to the format.</p>
       <div class="study-takeaway">
         <div class="study-takeaway-label">Key Findings</div>
-        <ul class="iteration-list">
-          <li>All 17 participants reacted positively to data-centric explanations and were interested in knowing more about training data</li>
-          <li>Over half (9/17) were unaware of fairness issues in ML systems, suggesting a significant transparency gap</li>
-          <li>The Q&amp;A format was well received; participants felt it helped them focus on what they cared about most</li>
-          <li>ML experts raised concerns that some information might be hard for non-experts to interpret, or could prompt unnecessary complaints</li>
-          <li>A few participants (3/17) found some answers too shallow and wanted more technical depth</li>
-        </ul>
+        <div class="finding-chips">
+          <div class="finding-chip">
+            <p><strong>Universal positive reception.</strong> All 17 participants reacted positively and expressed genuine interest in knowing more about what AI systems are trained on.</p>
+          </div>
+          <div class="finding-chip">
+            <p><strong>A hidden transparency gap.</strong> Over half (9/17) were unaware that ML systems could exhibit fairness issues, confirming a meaningful gap that data-centric explanations can address.</p>
+          </div>
+          <div class="finding-chip">
+            <p><strong>Q&amp;A gave users control.</strong> Participants appreciated navigating directly to what they cared about, rather than reading linearly through a fixed narrative.</p>
+          </div>
+          <div class="finding-chip">
+            <p><strong>Depth-accessibility tension.</strong> ML experts flagged interpretability concerns; some non-experts wanted more detail. Both signals drove the redesign.</p>
+          </div>
+        </div>
       </div>
       <div class="study-takeaway" style="margin-top:0.8rem;">
         <div class="study-takeaway-label">What Changed in the Redesign</div>
@@ -273,7 +304,6 @@
 
   <!-- Study 2 -->
   <div class="detail-section">
-    <h2>Study 2</h2>
     <div class="study-block">
       <div class="study-block-header">
         <div class="study-block-badge">Study 2</div>
@@ -313,6 +343,33 @@
     <cite>Participant, Study 2</cite>
   </div>
 
+  <!-- Key Insights -->
+  <div class="detail-section">
+    <h2>Key Insights</h2>
+    <div class="insight-grid">
+      <div class="insight-card">
+        <span class="insight-num">01</span>
+        <h4>Transparency calibrates trust, it does not destroy it</h4>
+        <p>Trust, fairness, and comfort shifted in response to data quality: down when training data had red flags, up when it was balanced. Users used the information to calibrate, not to reject.</p>
+      </div>
+      <div class="insight-card">
+        <span class="insight-num">02</span>
+        <h4>Demographics are the keystone information</h4>
+        <p>Two-thirds of participants cited demographic distribution as the single most influential category. Many spotted bias from the bar chart before reading a word. If you show one thing, show demographics.</p>
+      </div>
+      <div class="insight-card">
+        <span class="insight-num">03</span>
+        <h4>AI expertise does not gate comprehension</h4>
+        <p>No significant effect of ML background on any outcome measure. Beginners and experts engaged similarly. Training data explanations are accessible without ML expertise.</p>
+      </div>
+      <div class="insight-card">
+        <span class="insight-num">04</span>
+        <h4>Stakes determine engagement depth</h4>
+        <p>Participants probed training data most carefully in high-stakes scenarios like bail and admissions, and saw less need for it in low-stakes contexts. Design transparency features for the moments that matter most.</p>
+      </div>
+    </div>
+  </div>
+
   <!-- Implications -->
   <div class="detail-section">
     <h2>Design Implications</h2>
@@ -331,7 +388,7 @@
   <!-- Impact -->
   <div class="detail-section">
     <h2>Impact</h2>
-    <p>For product teams building AI systems: users do not need to understand how a model works to reason meaningfully about whether to trust it. They need to know what it learned from. This study showed that surfacing training data — demographics, collection method, known issues — gives users enough to form calibrated trust judgments on their own terms, without requiring ML expertise. The implication for transparency design is direct: training data deserves a UI.</p>
+    <p>For product teams building AI systems: users do not need to understand how a model works to reason meaningfully about whether to trust it. They need to know what it learned from. This study showed that surfacing training data (demographics, collection method, known issues) gives users enough to form calibrated trust judgments on their own terms, without requiring ML expertise. The implication for transparency design is direct: training data deserves a UI.</p>
     <p>Published at <strong>ACM CHI 2021</strong>. Directly motivated three follow-on studies in this portfolio.</p>
   </div>
 

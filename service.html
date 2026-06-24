@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Experience — Ariful Islam Anik, PhD</title>
+  <title>Experience | Ariful Islam Anik, PhD</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -179,5 +179,29 @@
   <p style="font-size: 0.75rem; margin-top: 0.4rem; opacity: 0.6;">Built with the assistance of <a href="https://claude.ai/code" target="_blank" rel="noopener">Claude Code</a>.</p>
 </footer>
 
+<script>
+(function () {
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  function reveal(el, delay) {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(20px)';
+    el.style.transition = 'opacity 0.5s ease ' + delay + 'ms, transform 0.5s ease ' + delay + 'ms';
+  }
+  var obs = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (!e.isIntersecting) return;
+      e.target.style.opacity = '1';
+      e.target.style.transform = 'none';
+      obs.unobserve(e.target);
+    });
+  }, { threshold: 0.08 });
+  ['.exp-card', '.award-card', '.service-row'].forEach(function (sel) {
+    document.querySelectorAll(sel).forEach(function (el, i) {
+      reveal(el, i * 60);
+      obs.observe(el);
+    });
+  });
+})();
+</script>
 </body>
 </html>

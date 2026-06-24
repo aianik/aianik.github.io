@@ -52,7 +52,7 @@
   <!-- Overview -->
   <div class="detail-section">
     <h2>Overview</h2>
-    <p class="section-lead">
+    <p>
       Measuring AI literacy sounds straightforward. Ask people how well they understand AI,
       and report the answers. The problem is that this approach assumes people know what they know.
       This project tests that assumption and finds it fails in a surprising direction.
@@ -70,7 +70,24 @@
   <!-- My Role -->
   <div class="my-role-block">
     <div class="my-role-label">My Role</div>
-    <p>I developed all scale items grounded in Long and Magerko's AI literacy framework, drawing on a review of existing instruments and collaborative item brainstorming. I conducted expert reviews and pilot testing before deploying the survey, collected both independent validation samples via Prolific, and ran the full psychometric analysis pipeline: EFA with Principal Axis Factoring, Item Response Theory modeling (Graded Response Model for Likert items, 3-parameter logistic model for multiple-choice), CFA, convergent and discriminant validity tests, measurement invariance analysis, and the calibration analysis that uncovered the reverse Dunning-Kruger effect.</p>
+    <div class="role-grid">
+      <div class="role-item">
+        <span class="role-item-label">Scale Development</span>
+        <p>Generated all items grounded in Long and Magerko's AI literacy framework. Refined through expert think-aloud sessions with three domain experts and a five-person pilot study before main data collection.</p>
+      </div>
+      <div class="role-item">
+        <span class="role-item-label">Data Collection</span>
+        <p>Deployed two independent validation surveys via Prolific, collecting samples of n = 288 and n = 188. Managed data quality checks and participant compensation across both studies.</p>
+      </div>
+      <div class="role-item">
+        <span class="role-item-label">Psychometric Analysis</span>
+        <p>Ran the full validation pipeline: EFA, IRT modeling (Graded Response Model and 3PL), CFA, convergent and discriminant validity, and measurement invariance analysis across both samples.</p>
+      </div>
+      <div class="role-item">
+        <span class="role-item-label">Calibration Analysis</span>
+        <p>Designed and ran the analysis that uncovered the reverse Dunning-Kruger pattern, computing bias index scores across the combined N = 476 sample and characterizing the systematic bidirectional mismatch.</p>
+      </div>
+    </div>
   </div>
 
   <!-- Problem -->
@@ -344,16 +361,23 @@
 
   <!-- Implications -->
   <div class="detail-section">
-    <h2>Implications for Product and Research Teams</h2>
-    <div class="outcome-note">
-      <span class="outcome-label">Impact</span>
-      Any team that screens user AI literacy to recruit study participants, segment users, or target onboarding is likely getting distorted data if they use self-report alone. The most confident participants were the most miscalibrated. Using confidence as a proxy for knowledge produces systematic errors in both directions.
+    <h2>Design Implications</h2>
+    <div class="highlight-box">
+      <h4>Core Insight</h4>
+      <p>Any team that screens user AI literacy to recruit study participants, segment users, or target onboarding is likely getting distorted data if they use self-report alone. The most confident participants were the most miscalibrated. Using confidence as a proxy for knowledge produces systematic errors in both directions.</p>
     </div>
     <ol class="impl-list">
       <li><strong>Self-report AI literacy screening is unreliable.</strong> If your user research screener asks "how would you rate your AI knowledge?", high scorers are likely to overestimate and low scorers to underestimate. Segment by demonstrated knowledge, not reported confidence, when it matters.</li>
       <li><strong>Calibration gap is a design target.</strong> Products that surface AI literacy feedback in onboarding flows, explainability features, and AI education tools should aim to close the gap between what users think they know and what they actually know, not just increase confidence scores.</li>
       <li><strong>Formal AI training inflates confidence without proportionally improving knowledge.</strong> Users who have taken AI courses or training were the most overconfident group in this study. Onboarding that builds confidence without building accurate knowledge may be doing more harm than good.</li>
     </ol>
+  </div>
+
+  <!-- Impact -->
+  <div class="detail-section">
+    <h2>Impact</h2>
+    <p>For user researchers: any screener question that asks participants to self-rate their AI knowledge is producing a distorted sample. The most AI-confident participants in this study were also the most miscalibrated, overestimating their actual knowledge by the widest margin. This is not noise; it is a systematic pattern that replicates across two independent samples.</p>
+    <p>For product teams and AI educators: onboarding programs that build user confidence without improving actual knowledge may be actively widening the calibration gap. This validated dual-format scale provides a practical tool for measuring both dimensions, including identifying where the gap is largest. Manuscript under review.</p>
   </div>
 
   <!-- Project navigation -->

@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Projects — Ariful Islam Anik, PhD</title>
+  <title>Projects | Ariful Islam Anik, PhD</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -120,7 +120,7 @@
       const clicked = tag.dataset.tag;
 
       if (activeTag === clicked) {
-        // Deselect — show all
+        // Deselect: show all
         activeTag = null;
       } else {
         activeTag = clicked;
@@ -141,5 +141,27 @@
   });
 </script>
 
+<script>
+(function () {
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  function reveal(el, delay) {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(24px)';
+    el.style.transition = 'opacity 0.55s ease ' + delay + 'ms, transform 0.55s ease ' + delay + 'ms';
+  }
+  var obs = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (!e.isIntersecting) return;
+      e.target.style.opacity = '1';
+      e.target.style.transform = 'none';
+      obs.unobserve(e.target);
+    });
+  }, { threshold: 0.08 });
+  document.querySelectorAll('.proj-card').forEach(function (el, i) {
+    reveal(el, i * 80);
+    obs.observe(el);
+  });
+})();
+</script>
 </body>
 </html>
