@@ -35,11 +35,26 @@
         PhD, Computer Science &middot; University of Manitoba &middot; Winnipeg, Canada &middot; Open to remote or relocation
       </p>
       <p class="hero-bio">
-        I design and study how people interact with AI systems, focusing on what helps them understand, trust, and make better decisions with AI-powered tools. At its core, this is a UX problem: understanding users, prototyping solutions, and testing whether they actually help.
+        I design and study how people interact with AI systems, focusing on transparency, trust, and decision-making. My PhD research at the <a href="https://hci.cs.umanitoba.ca/" target="_blank" rel="noopener">HCI Lab, University of Manitoba</a> spanned end-to-end UX work: prototyping interfaces, running controlled user studies, and translating findings into published design principles.
       </p>
-      <p class="hero-bio">
-        My PhD research at the <a href="https://hci.cs.umanitoba.ca/" target="_blank" rel="noopener">HCI Lab, University of Manitoba</a> spanned the full UX cycle: designing interfaces, running controlled user studies with 600+ participants, and translating findings into actionable design principles. The work produced 4 peer-reviewed publications at top HCI venues including CHI, IUI, and VL/HCC.
-      </p>
+      <div class="home-stats">
+        <div>
+          <div class="home-stat-val">600+</div>
+          <div class="home-stat-label">Study Participants</div>
+        </div>
+        <div>
+          <div class="home-stat-val">4</div>
+          <div class="home-stat-label">Publications</div>
+        </div>
+        <div>
+          <div class="home-stat-val">CHI &middot; IUI &middot; VL/HCC</div>
+          <div class="home-stat-label">Venues</div>
+        </div>
+        <div>
+          <div class="home-stat-val">8 yrs</div>
+          <div class="home-stat-label">HCI Research</div>
+        </div>
+      </div>
       <div class="hero-actions">
         <div class="hero-links">
           <a href="projects.html" class="btn btn-primary">
@@ -138,6 +153,28 @@
   document.querySelectorAll('.contact-link-item').forEach(function (el) {
     reveal(el, 0);
     obs.observe(el);
+  });
+})();
+</script>
+
+<button class="contact-float" id="contactFloat" aria-label="Copy email address">
+  <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+  <span class="contact-float-tip" id="contactTip">Copy email</span>
+</button>
+<script>
+(function () {
+  var btn = document.getElementById('contactFloat');
+  var tip = document.getElementById('contactTip');
+  if (!btn) return;
+  btn.addEventListener('click', function () {
+    navigator.clipboard.writeText('anik.mdariful@gmail.com').then(function () {
+      tip.textContent = 'Copied!';
+      btn.classList.add('show-tip');
+      setTimeout(function () {
+        tip.textContent = 'Copy email';
+        btn.classList.remove('show-tip');
+      }, 2000);
+    });
   });
 })();
 </script>

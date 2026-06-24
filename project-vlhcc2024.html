@@ -17,7 +17,7 @@
       <li><a href="projects.html" class="active">Projects</a></li>
       <li><a href="publications.html">Publications</a></li>
       <li><a href="service.html">Experience</a></li>
-      <li><a href="index.html#contact">Contact</a></li>
+      <li><a href="mailto:anik.mdariful@gmail.com">Contact</a></li>
     </ul>
   </nav>
 </header>
@@ -49,6 +49,29 @@
   </div>
 
   <a class="back-link" href="projects.html">← Back to Projects</a>
+
+  <!-- TL;DR card -->
+  <div class="tldr-card">
+    <div class="tldr-item">
+      <span class="tldr-label">Problem</span>
+      <p class="tldr-text">Does the format of a training data explanation change how accurately users can assess and critique an AI system?</p>
+    </div>
+    <div class="tldr-item">
+      <span class="tldr-label">Approach</span>
+      <p class="tldr-text">Between-subjects experiment (n&thinsp;=&thinsp;39) comparing a narrative Data Story against a structured Q&amp;A format, with identical content across both conditions.</p>
+    </div>
+    <div class="tldr-item">
+      <span class="tldr-label">Key Finding</span>
+      <p class="tldr-text">Format determined accuracy. Data Story produced 66% high-accuracy critiques; Q&amp;A produced 42%. Same information, different packaging, measurably different outcomes.</p>
+    </div>
+  </div>
+
+  <!-- Lead finding callout -->
+  <div class="lead-finding">
+    <div class="lead-finding-stat">66%</div>
+    <div class="lead-finding-text"><strong>High-accuracy critique rate in the Data Story condition, versus 42% in the Q&amp;A condition.</strong> The same training data content, presented differently, produced a 24-percentage-point gap in how well users could evaluate the AI.</div>
+  </div>
+
 
   <!-- Overview -->
   <div class="detail-section">
@@ -423,6 +446,28 @@
     var total = document.documentElement.scrollHeight - document.documentElement.clientHeight;
     bar.style.width = total > 0 ? (scrolled / total * 100) + '%' : '0%';
   }, { passive: true });
+})();
+</script>
+
+<button class="contact-float" id="contactFloat" aria-label="Copy email address">
+  <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+  <span class="contact-float-tip" id="contactTip">Copy email</span>
+</button>
+<script>
+(function () {
+  var btn = document.getElementById('contactFloat');
+  var tip = document.getElementById('contactTip');
+  if (!btn) return;
+  btn.addEventListener('click', function () {
+    navigator.clipboard.writeText('anik.mdariful@gmail.com').then(function () {
+      tip.textContent = 'Copied!';
+      btn.classList.add('show-tip');
+      setTimeout(function () {
+        tip.textContent = 'Copy email';
+        btn.classList.remove('show-tip');
+      }, 2000);
+    });
+  });
 })();
 </script>
 </body>

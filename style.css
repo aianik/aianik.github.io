@@ -27,6 +27,8 @@
   --font-display: 'Crimson Pro', Georgia, serif;
   --max-w:     980px;
   --radius:    6px;
+  --teal-bg:   #f0fdfa;
+  --teal-d:    #0d6b63;
 }
 
 html { scroll-behavior: smooth; }
@@ -496,6 +498,92 @@ section { margin-bottom: 3.5rem; }
   font-weight: 600;
 }
 
+/* ── Homepage credential stats ──────────────────── */
+.home-stats {
+  display: flex; gap: 2.5rem; flex-wrap: wrap;
+  margin-top: 2rem; padding-top: 1.75rem;
+  border-top: 1px solid rgba(14,148,136,0.2);
+}
+.home-stat-val {
+  font-family: var(--font-display); font-size: 2.2rem;
+  font-weight: 400; color: var(--navy); line-height: 1;
+  letter-spacing: -0.01em;
+}
+.home-stat-label {
+  font-family: var(--font-ui); font-size: 0.62rem;
+  color: var(--muted); margin-top: 0.3rem;
+  text-transform: uppercase; letter-spacing: 0.1em;
+  font-weight: 600;
+}
+
+/* ── TL;DR summary card ─────────────────────────── */
+.tldr-card {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  border: 1px solid var(--border); border-radius: 12px;
+  overflow: hidden; margin: 1.5rem 0 0;
+  background: var(--white);
+}
+.tldr-item {
+  padding: 1.4rem 1.6rem;
+  border-right: 1px solid var(--border);
+}
+.tldr-item:last-child { border-right: none; }
+.tldr-label {
+  font-family: var(--font-ui); font-size: 0.6rem;
+  font-weight: 700; text-transform: uppercase;
+  letter-spacing: 0.12em; color: var(--teal);
+  margin-bottom: 0.45rem; display: block;
+}
+.tldr-text {
+  font-size: 0.84rem; color: var(--text); line-height: 1.6; margin: 0;
+}
+
+/* ── Lead finding callout ───────────────────────── */
+.lead-finding {
+  background: var(--navy); border-radius: 12px;
+  padding: 1.8rem 2.2rem; margin: 2rem 0 0;
+  display: flex; align-items: center; gap: 2rem;
+}
+.lead-finding-stat {
+  font-family: var(--font-display); font-size: 3.8rem;
+  font-weight: 400; line-height: 1; flex-shrink: 0;
+  color: var(--teal-lt); min-width: 4.5rem; text-align: center;
+}
+.lead-finding-text {
+  font-size: 0.9rem; line-height: 1.7; color: rgba(255,255,255,0.75);
+}
+.lead-finding-text strong { color: #fff; font-weight: 600; }
+
+/* ── Floating contact button ────────────────────── */
+.contact-float {
+  position: fixed; bottom: 1.75rem; right: 1.75rem;
+  width: 48px; height: 48px; border-radius: 50%;
+  background: var(--teal); color: #fff;
+  border: none; cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  box-shadow: 0 4px 16px rgba(15,118,110,0.45);
+  z-index: 100;
+  transition: background 0.15s, transform 0.15s, box-shadow 0.15s;
+}
+.contact-float:hover { background: var(--teal-d); transform: scale(1.07); box-shadow: 0 6px 24px rgba(15,118,110,0.55); }
+.contact-float svg { width: 20px; height: 20px; stroke: #fff; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.contact-float-tip {
+  position: absolute; right: calc(100% + 0.7rem); top: 50%;
+  transform: translateY(-50%);
+  background: var(--navy); color: #fff;
+  font-family: var(--font-ui); font-size: 0.71rem; font-weight: 600;
+  padding: 0.3rem 0.6rem; border-radius: 6px; white-space: nowrap;
+  opacity: 0; pointer-events: none;
+  transition: opacity 0.15s;
+}
+.contact-float-tip::after {
+  content: ''; position: absolute; left: 100%; top: 50%;
+  transform: translateY(-50%);
+  border: 5px solid transparent; border-left-color: var(--navy);
+}
+.contact-float:hover .contact-float-tip,
+.contact-float.show-tip .contact-float-tip { opacity: 1; }
+
 /* ── Section block ──────────────────────────────── */
 .detail-section {
   background: transparent;
@@ -560,37 +648,41 @@ section { margin-bottom: 3.5rem; }
 .process-steps {
   display: flex; align-items: flex-start;
   gap: 0; overflow-x: auto;
-  padding: 0.4rem 0 0.5rem;
+  padding: 0.5rem 0 0.75rem;
 }
 .process-step {
-  flex: 1; min-width: 100px;
+  flex: 1; min-width: 110px;
   display: flex; flex-direction: column; align-items: center;
   text-align: center; position: relative;
 }
 .process-step:not(:last-child)::after {
   content: '';
-  position: absolute; top: 15px; left: calc(50% + 15px);
-  width: calc(100% - 30px); height: 1.5px;
+  position: absolute; top: 19px; left: calc(50% + 20px);
+  width: calc(100% - 40px); height: 2px;
   background: var(--border);
+  transition: background 0.3s;
 }
+.process-step.active:not(:last-child)::after { background: var(--teal); }
 .step-circle {
-  width: 30px; height: 30px; border-radius: 50%;
+  width: 40px; height: 40px; border-radius: 50%;
   background: var(--white); color: var(--muted);
-  font-family: var(--font-ui); font-size: 0.72rem;
+  font-family: var(--font-ui); font-size: 0.8rem;
   font-weight: 700; display: flex; align-items: center;
-  justify-content: center; margin-bottom: 0.5rem;
+  justify-content: center; margin-bottom: 0.6rem;
   flex-shrink: 0; position: relative; z-index: 1;
-  border: 1.5px solid var(--border);
+  border: 2px solid var(--border);
+  transition: background 0.2s, border-color 0.2s, color 0.2s;
 }
 .process-step.active .step-circle {
   background: var(--teal); color: #fff; border-color: var(--teal);
+  box-shadow: 0 0 0 4px rgba(15,118,110,0.12);
 }
 .step-label {
-  font-family: var(--font-ui); font-size: 0.68rem;
-  font-weight: 500; color: var(--muted); line-height: 1.3;
-  padding: 0 0.2rem;
+  font-family: var(--font-ui); font-size: 0.71rem;
+  font-weight: 500; color: var(--muted); line-height: 1.35;
+  padding: 0 0.3rem;
 }
-.process-step.active .step-label { color: var(--text); font-weight: 600; }
+.process-step.active .step-label { color: var(--navy); font-weight: 600; }
 
 /* ── Method cards ───────────────────────────────── */
 .method-grid {
@@ -1520,4 +1612,11 @@ section { margin-bottom: 3.5rem; }
   .course-grid { grid-template-columns: 1fr; }
   .finding-chips { grid-template-columns: 1fr; }
   .insight-grid { grid-template-columns: 1fr; }
+  .tldr-card { grid-template-columns: 1fr; }
+  .tldr-item { border-right: none; border-bottom: 1px solid var(--border); }
+  .tldr-item:last-child { border-bottom: none; }
+  .lead-finding { flex-direction: column; gap: 1rem; text-align: center; }
+  .lead-finding-stat { font-size: 3rem; min-width: auto; }
+  .home-stats { gap: 1.5rem; }
+  .contact-float { bottom: 1.2rem; right: 1.2rem; width: 44px; height: 44px; }
 }

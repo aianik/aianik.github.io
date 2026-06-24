@@ -17,7 +17,7 @@
       <li><a href="projects.html" class="active">Projects</a></li>
       <li><a href="publications.html">Publications</a></li>
       <li><a href="service.html">Experience</a></li>
-      <li><a href="index.html#contact">Contact</a></li>
+      <li><a href="mailto:anik.mdariful@gmail.com">Contact</a></li>
     </ul>
   </nav>
 </header>
@@ -49,6 +49,29 @@
   </div>
 
   <a class="back-link" href="projects.html">← Back to Projects</a>
+
+  <!-- TL;DR card -->
+  <div class="tldr-card">
+    <div class="tldr-item">
+      <span class="tldr-label">Problem</span>
+      <p class="tldr-text">How does making an AI&rsquo;s training data visible affect the way everyday users trust and assess it?</p>
+    </div>
+    <div class="tldr-item">
+      <span class="tldr-label">Approach</span>
+      <p class="tldr-text">Two iterative studies (formative n&thinsp;=&thinsp;17, evaluative n&thinsp;=&thinsp;27) using a purpose-built data-centric explanation prototype.</p>
+    </div>
+    <div class="tldr-item">
+      <span class="tldr-label">Key Finding</span>
+      <p class="tldr-text">Trust tracked data quality directly: revealing problems lowered it, revealing balanced data raised it. The effect held regardless of ML expertise.</p>
+    </div>
+  </div>
+
+  <!-- Lead finding callout -->
+  <div class="lead-finding">
+    <div class="lead-finding-stat">4 / 4</div>
+    <div class="lead-finding-text"><strong>Consistent across all four AI scenarios tested.</strong> Trust was significantly higher when training data was balanced and significantly lower when it revealed problems: providing the first empirical evidence that training data transparency can systematically move user trust.</div>
+  </div>
+
 
   <!-- Overview -->
   <div class="detail-section">
@@ -516,6 +539,28 @@
     var total = document.documentElement.scrollHeight - document.documentElement.clientHeight;
     bar.style.width = total > 0 ? (scrolled / total * 100) + '%' : '0%';
   }, { passive: true });
+})();
+</script>
+
+<button class="contact-float" id="contactFloat" aria-label="Copy email address">
+  <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+  <span class="contact-float-tip" id="contactTip">Copy email</span>
+</button>
+<script>
+(function () {
+  var btn = document.getElementById('contactFloat');
+  var tip = document.getElementById('contactTip');
+  if (!btn) return;
+  btn.addEventListener('click', function () {
+    navigator.clipboard.writeText('anik.mdariful@gmail.com').then(function () {
+      tip.textContent = 'Copied!';
+      btn.classList.add('show-tip');
+      setTimeout(function () {
+        tip.textContent = 'Copy email';
+        btn.classList.remove('show-tip');
+      }, 2000);
+    });
+  });
 })();
 </script>
 </body>

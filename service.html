@@ -16,7 +16,7 @@
       <li><a href="projects.html">Projects</a></li>
       <li><a href="publications.html">Publications</a></li>
       <li><a href="service.html" class="active">Experience</a></li>
-      <li><a href="index.html#contact">Contact</a></li>
+      <li><a href="mailto:anik.mdariful@gmail.com">Contact</a></li>
     </ul>
   </nav>
 </header>
@@ -195,6 +195,28 @@
     document.querySelectorAll(sel).forEach(function (el, i) {
       reveal(el, i * 60);
       obs.observe(el);
+    });
+  });
+})();
+</script>
+
+<button class="contact-float" id="contactFloat" aria-label="Copy email address">
+  <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+  <span class="contact-float-tip" id="contactTip">Copy email</span>
+</button>
+<script>
+(function () {
+  var btn = document.getElementById('contactFloat');
+  var tip = document.getElementById('contactTip');
+  if (!btn) return;
+  btn.addEventListener('click', function () {
+    navigator.clipboard.writeText('anik.mdariful@gmail.com').then(function () {
+      tip.textContent = 'Copied!';
+      btn.classList.add('show-tip');
+      setTimeout(function () {
+        tip.textContent = 'Copy email';
+        btn.classList.remove('show-tip');
+      }, 2000);
     });
   });
 })();

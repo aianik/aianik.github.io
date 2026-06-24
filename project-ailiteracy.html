@@ -17,7 +17,7 @@
       <li><a href="projects.html" class="active">Projects</a></li>
       <li><a href="publications.html">Publications</a></li>
       <li><a href="service.html">Experience</a></li>
-      <li><a href="index.html#contact">Contact</a></li>
+      <li><a href="mailto:anik.mdariful@gmail.com">Contact</a></li>
     </ul>
   </nav>
 </header>
@@ -49,6 +49,29 @@
   </div>
 
   <a class="back-link" href="projects.html">← Back to Projects</a>
+
+  <!-- TL;DR card -->
+  <div class="tldr-card">
+    <div class="tldr-item">
+      <span class="tldr-label">Problem</span>
+      <p class="tldr-text">How do we measure AI literacy in a way that captures both what people know and what they think they know?</p>
+    </div>
+    <div class="tldr-item">
+      <span class="tldr-label">Approach</span>
+      <p class="tldr-text">Two-stage psychometric scale development and validation across two independent samples (N&thinsp;=&thinsp;476) using EFA, IRT, and CFA.</p>
+    </div>
+    <div class="tldr-item">
+      <span class="tldr-label">Key Finding</span>
+      <p class="tldr-text">The scale works: but the real discovery is a calibration reversal: people who rate their AI knowledge highest show the largest gap between confidence and actual knowledge.</p>
+    </div>
+  </div>
+
+  <!-- Lead finding callout -->
+  <div class="lead-finding">
+    <div class="lead-finding-stat">476</div>
+    <div class="lead-finding-text"><strong>Participants across two independent validation samples revealed a consistent reverse Dunning-Kruger pattern.</strong> High self-raters systematically overestimated their AI knowledge; low self-raters systematically underestimated it.</div>
+  </div>
+
 
   <!-- Overview -->
   <div class="detail-section">
@@ -504,6 +527,28 @@
     var total = document.documentElement.scrollHeight - document.documentElement.clientHeight;
     bar.style.width = total > 0 ? (scrolled / total * 100) + '%' : '0%';
   }, { passive: true });
+})();
+</script>
+
+<button class="contact-float" id="contactFloat" aria-label="Copy email address">
+  <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+  <span class="contact-float-tip" id="contactTip">Copy email</span>
+</button>
+<script>
+(function () {
+  var btn = document.getElementById('contactFloat');
+  var tip = document.getElementById('contactTip');
+  if (!btn) return;
+  btn.addEventListener('click', function () {
+    navigator.clipboard.writeText('anik.mdariful@gmail.com').then(function () {
+      tip.textContent = 'Copied!';
+      btn.classList.add('show-tip');
+      setTimeout(function () {
+        tip.textContent = 'Copy email';
+        btn.classList.remove('show-tip');
+      }, 2000);
+    });
+  });
 })();
 </script>
 </body>
